@@ -2,19 +2,32 @@ import React from "react"
 
 import { Link } from "gatsby"
 import urlToPath from "gatsby-source-wordpress-experimental/utils/url-to-path"
-import { Box, Heading } from "@chakra-ui/core"
 import Img from "gatsby-image"
+import {Box} from '@material-ui/core'
 import Layout from "../../components/layout"
+import AllLayouts from "../../components/AllLayouts"
+import Footer from "../../components/Footer"
+import Style from "./style.scss"
+
+
 
 function BlogPost({ data }) {
   const { nextPage, previousPage, page } = data
-  const { title, content, featuredImage } = page
+  const { title, content, featuredImage, pageBuilder } = page
+
+  
 
   return (
     <Layout>
-      <Heading as="h1" size="xl" mb={5}>
-        {title}
-      </Heading>
+
+      {!!pageBuilder&&
+        pageBuilder.layouts&&
+         pageBuilder.layouts.map((layout, index) => {
+          console.log(layout)
+          return <AllLayouts key={index} layoutData={layout} />
+         
+        })
+      }
 
       {!!featuredImage &&
         featuredImage.remoteFile &&
@@ -23,8 +36,17 @@ function BlogPost({ data }) {
             <Img fluid={featuredImage.remoteFile.childImageSharp.fluid} />
           </Box>
         )}
+      
+        {!!pageBuilder&&
+          pageBuilder.footers&& 
+          pageBuilder.footers.footer && (
+            <Footer data={pageBuilder.footers.footer.email} />
+          )
+           
+        }
+  
 
-      <p dangerouslySetInnerHTML={{ __html: content }} />
+      <div className={Style} dangerouslySetInnerHTML={{ __html: content }} />
 
       <br />
       {!!nextPage && (
@@ -36,6 +58,9 @@ function BlogPost({ data }) {
           Previous: {previousPage.title}
         </Link>
       )}
+
+
+   
     </Layout>
   )
 }

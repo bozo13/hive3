@@ -1,21 +1,47 @@
-import React from "react"
-import { Box, Grid } from "@chakra-ui/core"
-import Header from "./header"
-import Menu from "./menu"
+import React, { Fragment } from "react"
+import Header from "./Header"
+import {Container, Grid} from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from '../theme';
+import HeadingTitle from  './HeadTitle';
+import FooterBox from  './FooterBox';
 
-import "../assets/style.css"
+
+
+
+
+
+//import theme from '../utils/Theme'
+ 
+//import "../assets/style.css"
+
+
 
 const Layout = ({ children }) => (
-  <div>
-    <Grid style={{ margin: `0 auto` }} maxW="90%" w={900} alignSelf="center">
-      <Box mb={10} mt={20}>
-        <Header />
-      </Box>
-      <Menu />
 
-      <Box mb={100}>{children}</Box>
-    </Grid>
-  </div>
-)
+  <ThemeProvider theme={theme}>
+  <HeadingTitle/> 
+  <Container>
+      <CssBaseline />
+          <Header/> 
+            <Grid 
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+              style={{
+                marginTop:'75px'
+              }}
+            >
+              {children}
+ 
+          </Grid>
+      </Container> 
+      <FooterBox/>
+    </ThemeProvider>
+
+  )
 
 export default Layout

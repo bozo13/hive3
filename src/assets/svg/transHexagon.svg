@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 453 523.077">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #f8c05e;
+      }
+    </style>
+  </defs>
+  <g id="Group_794" data-name="Group 794" class="cls-1" transform="translate(0 181.518)">
+    <g id="Group_1" data-name="Group 1" transform="translate(0 -181.517)">
+      <path id="Path_1" data-name="Path 1" class="cls-2" d="M147.9,0-78.6,130.769v261.54L147.9,523.077,374.4,392.309V130.769Z" transform="translate(78.6)"/>
+    </g>
+  </g>
+</svg>
