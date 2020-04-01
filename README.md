@@ -89,3 +89,4 @@ If you're getting errors while the nodes are being sourced, you can see which qu
 Currently the source plugin code lives here -> https://github.com/TylerBarnes/gatsby/tree/feat/source-wordpress-v4/packages/gatsby-source-wordpress-experimental
 And the WPGatsby code lives here -> https://github.com/TylerBarnes/gatsby/tree/feat/source-wordpress-v4/packages/wp-gatsby
 # hive2
+# hive3
