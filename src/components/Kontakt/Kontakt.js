@@ -56,14 +56,16 @@ const styles = {
     marginTop: '1rem',
   },
   img:{
-    textAlign: 'center',
+    textAlign: 'left',
     margin: '0 auto',
     width: '15rem',
+    display: 'inline-block',
   },
   img2:{
-    textAlign: 'center',
+    textAlign: 'right',
     margin: '0rem 0 0 4rem',
     width: '10rem',
+    display: 'inline-block',
   },
   text:{
     textAlign: 'center',

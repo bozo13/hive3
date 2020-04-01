@@ -3,15 +3,13 @@ $secondaryColor:  #DFA629;
 h1,h2{
   color:$primaryColor;
 }  
-
 h3{
   color:$primaryColor;
   font-family: 'Ostbahnhof';
   letter-spacing: 0.05rem;
-  font-size: 1.75rem;
 }
 p{
-  line-height:  1.25rem;
+  line-height:  1.75rem;
   color:$primaryColor;
 }
 a{
@@ -21,5 +19,8 @@ a{
 }
 a:hover{
   background: rgba($color: #FFFFFF, $alpha: 0.3);
+}
+
+ul{
 
 }
