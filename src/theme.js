@@ -88,9 +88,18 @@ const theme = createMuiTheme({
          fontSize:'0.87rem',
          fontFamily:'GraphitRegular',
          letterSpacing: '-0.012rem',
-         lineHeight: '1.43rem',
+         lineHeight: '1.55rem',
          color:'#232E3C',
         },
+        p:{
+          
+          fontSize:'0.87rem',
+          fontFamily:'GraphitRegular',
+          letterSpacing: '-0.012rem',
+          lineHeight: '1.55rem',
+          color:'#232E3C',
+        },
+
         h1:{
           fontFamily: 'Ostbahnhof',
         },
@@ -121,21 +130,23 @@ const theme = createMuiTheme({
       
       MuiTableCell:{  
         root: {
-        padding: '5px',
+        padding: '15px 0px',
         borderBottom: `0.1rem solid #F8C05E`,
         verticalAlign:'text-top',
         
         "&:first-child": {
           color: "#DFA629",
-          fontSize: "1.2rem",
+          fontSize: "1.43rem",
           padding: '0px',
           fontFamily: 'Ostbahnhof', 
           letterSpacing: '0.12rem',
+          lineHeight: '1.22rem',
          },
    
          "&:last-child": {
           fontFamily: 'GraphitRegular', 
           color: "#232E3C",
+          paddingLeft: '15px',
          
          },
        

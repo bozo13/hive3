@@ -1,26 +1,22 @@
 $primaryColor:  #303340;
 $secondaryColor:  #DFA629;
-h1,h2{
-  color:$primaryColor;
-}  
-h3{
-  color:$primaryColor;
-  font-family: 'Ostbahnhof';
-  letter-spacing: 0.05rem;
-}
-p{
-  line-height:  1.75rem;
-  color:$primaryColor;
-}
-a{
-  text-decoration: none;
-  color: $secondaryColor;
-  padding: 10px;
-}
-a:hover{
-  background: rgba($color: #FFFFFF, $alpha: 0.3);
+
+body {
+  h3{
+    font-size: 1.17em;
+    padding: 2rem 0rem;
+  }
+  p{
+    font-size:0.87rem;
+    letter-spacing: -0.012rem;
+    line-height: 1.55rem;;
+    color:#232E3C;
+  }
 }
 
-ul{
-
+.footInfo{
+  p{
+    line-height: 2rem;
+    padding-top: 3rem;
+  }
 }

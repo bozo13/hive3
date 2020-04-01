@@ -71,11 +71,12 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sharp`,
+     `gatsby-plugin-sharp`,
+ 
   ],
 }

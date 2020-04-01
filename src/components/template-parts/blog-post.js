@@ -11,6 +11,7 @@ import Style from "./style.scss"
 
 
 
+
 function BlogPost({ data }) {
   const { nextPage, previousPage, page } = data
   const { title, content, featuredImage, pageBuilder } = page
@@ -46,8 +47,8 @@ function BlogPost({ data }) {
         }
   
 
-      <div className={Style} dangerouslySetInnerHTML={{ __html: content }} />
-
+      <Box style={Style} className={content} dangerouslySetInnerHTML={{ __html: content }} />
+      <Box style={{ display:'none' }} >
       <br />
       {!!nextPage && (
         <Link to={urlToPath(nextPage.link)}>Next: {nextPage.title}</Link>
@@ -58,6 +59,7 @@ function BlogPost({ data }) {
           Previous: {previousPage.title}
         </Link>
       )}
+      </Box>
 
 
    

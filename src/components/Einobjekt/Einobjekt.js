@@ -44,8 +44,14 @@ const styles = {
     padding: '2rem',
   },
   texttitle1:{
+    paddingTop: 0,
     paddingLeft: '2rem',
   },
+  texttitle2:{
+    paddingTop: 0,
+ 
+  },
+
 }
 
 const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
@@ -70,7 +76,7 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
 
       <Grid item xs={12} sm={6} style={styles.texttitle}>
       <Typography variant= 'h3'  style={styles.texttitle1}> {texttitle}</Typography>
-      <Typography variant= 'h3'  > {texttitle2}</Typography>
+      <Typography variant= 'h3'  style={styles.texttitle2}> {texttitle2}</Typography>
       </Grid>
   
       <Box

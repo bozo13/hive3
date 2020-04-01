@@ -48,14 +48,8 @@ const Downloadable = ({text1, text2, textColor, texttitle}) => {
       </Box>
       <Box style={styles.text2}>
       <Typography  variant='h4' color= 'secondary'>{text2}</Typography>
-    </Box> 
-      <Box
-      component={Grid}
-      item
-      xs={3}
-      display={{ xs: "none", sm: "block" }}
-      />
- 
+    </Box>
+  
     </Grid>
     <Grid item xs={12}  style= {styles.text2}>
     

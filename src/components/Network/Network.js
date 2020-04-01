@@ -58,7 +58,7 @@ const Network = ({text1, text2, textColor, texttitle ,texttitle2}) => {
         <Box
         component={Grid}
         item
-        xs={5}
+        xs={12}  sm={5}
         style = {styles.NetworkBg}
         />
 

@@ -75,7 +75,12 @@ const styles = {
     margin: '1.25rem 0.875rem',
     zIndex: '10',
   },
+  texttilte1:{
+    padding: '0rem',
+    zIndex: '11',
+  },
   texttilte2:{
+    paddingTop: '0rem',
     paddingLeft: '2rem',
     zIndex: '11',
   }
@@ -174,7 +179,7 @@ class Carousel extends React.Component {
       </Box>
         <Grid item xs={12} md={4} style={styles.freiraum}>
           <Box style={styles.Texttitle}>
-            <Typography  variant="h3"  >{ Texttitle } </Typography>
+            <Typography  variant="h3" style={styles.texttilte1} >{ Texttitle } </Typography>
             <Typography  variant="h3" style={styles.texttilte2} >{ Texttitle2 } </Typography>
           </Box>
           <Box style={styles.block1}>

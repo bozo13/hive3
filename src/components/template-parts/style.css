@@ -1,25 +1,17 @@
-h1, h2 {
-  color: #303340;
+body h3 {
+  font-size: 1.17em;
+  padding: 2rem 0rem;
 }
 
-h3 {
-  color: #303340;
-  font-family: 'Ostbahnhof';
-  letter-spacing: 0.05rem;
+body p {
+  font-size: 0.87rem;
+  letter-spacing: -0.012rem;
+  line-height: 1.55rem;
+  color: #232E3C;
 }
 
-p {
-  line-height: 1.75rem;
-  color: #303340;
-}
-
-a {
-  text-decoration: none;
-  color: #DFA629;
-  padding: 10px;
-}
-
-a:hover {
-  background: rgba(255, 255, 255, 0.3);
+.footInfo p {
+  line-height: 2rem;
+  padding-top: 3rem;
 }
 /*# sourceMappingURL=style.css.map */
