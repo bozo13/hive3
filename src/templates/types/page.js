@@ -34,6 +34,7 @@ export const query = graphql`
               text2
               textColor
               texttitle
+              texttitle2
             }
             ... on WpPage_Pagebuilder_Layouts_Kontakt {
               fieldGroupName

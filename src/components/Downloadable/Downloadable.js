@@ -12,10 +12,11 @@ const styles = {
   root: {
     width: '100%',
     display: 'flex',
-    paddingTop: '3rem',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   img1:{},
-  img2:{ margin: '130px 0px  0px -81px'},
+  img2:{ margin: '260px 0px  0px -81px'},
   text1:{ padding: '3rem 2rem 2rem 2rem', },
   text2:{padding: '10rem 2rem 2rem 2rem',},
   title:{ textAlign: 'center'},

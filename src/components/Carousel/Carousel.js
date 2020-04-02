@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -123,7 +124,7 @@ class Carousel extends React.Component {
 
     return (
       
-
+<Container>
       <Grid 
       container
       >
@@ -200,6 +201,8 @@ class Carousel extends React.Component {
 
           </Grid>
         </Grid>
+
+        </Container>
       
     )
   }

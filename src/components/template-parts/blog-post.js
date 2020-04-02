@@ -3,13 +3,32 @@ import React from "react"
 import { Link } from "gatsby"
 import urlToPath from "gatsby-source-wordpress-experimental/utils/url-to-path"
 import Img from "gatsby-image"
-import {Box} from '@material-ui/core'
+import {Box, Container} from '@material-ui/core'
 import Layout from "../../components/layout"
 import AllLayouts from "../../components/AllLayouts"
 import Footer from "../../components/Footer"
 import Style from "./style.scss"
+import FooterImage from '../../assets/images/FootImage.png'
 
 
+
+const styles = {
+  root: {
+    margin:'0',
+  },
+  container: {
+    width:'100%',
+    minHeight:'100%',
+    backgroundImage: `url(${FooterImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center bottom',
+},
+ 
+  space2:{
+    textAlign: 'center',
+    margin: '10rem auto',
+  },
+} 
 
 
 function BlogPost({ data }) {
@@ -20,7 +39,7 @@ function BlogPost({ data }) {
 
   return (
     <Layout>
-
+    
       {!!pageBuilder&&
         pageBuilder.layouts&&
          pageBuilder.layouts.map((layout, index) => {
@@ -43,12 +62,13 @@ function BlogPost({ data }) {
           pageBuilder.footers.footer && (
             <Footer data={pageBuilder.footers.footer.email} />
           )
-           
         }
-  
 
-      <Box style={Style} className={content} dangerouslySetInnerHTML={{ __html: content }} />
-      <Box style={{ display:'none' }} >
+    <Container>
+      <Box style={Style} className={content} dangerouslySetInnerHTML={{ __html: content }}/>
+    </Container>
+
+    <Box style={{ display:'none' }} >
       <br />
       {!!nextPage && (
         <Link to={urlToPath(nextPage.link)}>Next: {nextPage.title}</Link>
@@ -62,7 +82,7 @@ function BlogPost({ data }) {
       </Box>
 
 
-   
+      
     </Layout>
   )
 }

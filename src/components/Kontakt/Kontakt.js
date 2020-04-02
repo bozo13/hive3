@@ -15,7 +15,8 @@ import{ Typography ,
   VisibilityOff,
   Button,
   Checkbox,
-  FormControlLabel
+  FormControlLabel,
+  Container
 }from '@material-ui/core/';
 
 import FooterBox from  '../FooterBox';
@@ -24,6 +25,8 @@ import GatewayLogo from '../../assets/svg/gateway.svg';
 import { autoPlay } from 'react-swipeable-views-utils';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+import FooterImage from '../../assets/images/FootImage.png'
+
 
 
 
@@ -31,14 +34,21 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const styles = {
   root: {
-    margin:'0 50px',
+    margin:'0',
   },
+  container: {
+    width:'100%',
+    minHeight:'100%',
+    backgroundImage: `url(${FooterImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center bottom',
+},
   texttitle:{
     margin: '6rem 0',
     textAlign: 'center',
   },
   form:{
-    width: '100%',
+    maxWidth: '100%',
   },
   textField: {
     width: '100%',
@@ -50,6 +60,9 @@ const styles = {
   },
   padding: {
     padding: '0 5%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button:{
     width: '50%',
@@ -76,13 +89,19 @@ const styles = {
     textAlign: 'center',
     margin: '3rem auto',
   },
+  space2:{
+    textAlign: 'center',
+    margin: '10rem auto',
+  },
 } 
 
 
 const Kontakt = ({text1, text2, textColor, texttitle}) => {
 
   return (
-    <Box width={1} id={'Kontakt'}>
+    <Box style={ styles.container} id={'Kontakt'} >
+    <Container >
+
   
     <Grid container>
       <Grid item xs={12}   style={ styles.texttitle} >
@@ -199,7 +218,8 @@ const Kontakt = ({text1, text2, textColor, texttitle}) => {
     </Grid>
 
     </Grid>
-
+    <Box style={ styles.space2} />
+    </Container>
     </Box>
   )
 }

@@ -1,10 +1,12 @@
-import React from "react"
-import FluidImage from "../../components/FluidImage"
+import React from "react";
+import FluidImage from "../../components/FluidImage";
+import {Container} from '@material-ui/core';
 
 const Hero = ({ image, text, textColor }) => {
 
   return (
-    <section style={{ position: "relative", width: '100%'}} id={'Film'}>
+
+    <Container style={{ position: "relative", width: '100%'}} id={'Film'}>
       <FluidImage image={image} style={{width: `100%`, height: `100% ` }}/>
       <p style={{
         color: textColor,
@@ -17,7 +19,7 @@ const Hero = ({ image, text, textColor }) => {
         lineHeight: 1,
       }}>{text}</p>
 
-    </section>
+    </Container>
   )
 }
 

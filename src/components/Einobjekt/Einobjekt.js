@@ -1,7 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import {Typography,Grid,Container,Box} from '@material-ui/core/';
 import BerlinBgCounter from '../../assets/images/BerlinBgCounter.png'
 import TransHexagonBg2 from '../../assets/images/TransHexagonBg2.png'
 import TransHexagonBg3 from '../../assets/images/TransHexagonBg3.png'
@@ -10,7 +8,7 @@ import TransHexagonBg3 from '../../assets/images/TransHexagonBg3.png'
 
 const styles = {
   root: {
-      width:'100vw',
+      width:'100%',
       height:'38vh',
       backgroundImage: `url(${BerlinBgCounter})`,
       backgroundSize: 'cover',
@@ -44,8 +42,8 @@ const styles = {
     padding: '2rem',
   },
   texttitle1:{
-    paddingTop: 0,
-    paddingLeft: '2rem',
+    
+    padding: '0 0 0 2rem ',
   },
   texttitle2:{
     paddingTop: 0,
@@ -57,6 +55,7 @@ const styles = {
 const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
 
   return (
+    <Container>
     <Grid container id={'Objekt'}>
     <Box
     component={Grid}
@@ -113,7 +112,7 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
   >
   </Box>
     </Grid>
-    
+    </Container>
   )
 }
 

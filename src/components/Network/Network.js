@@ -1,7 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import {Typography, Box, Grid, Container} from '@material-ui/core/';
 import NetworkBg from '../../assets/images/NetworkBg.png'
 import NetworkBg2 from '../../assets/images/NetworkBg2.png'
 
@@ -34,7 +32,7 @@ const styles = {
 const Network = ({text1, text2, textColor, texttitle ,texttitle2}) => {
 
   return (
-    <>
+    <Container>
      <Grid container>
       <Box
       component={Grid}
@@ -73,7 +71,7 @@ const Network = ({text1, text2, textColor, texttitle ,texttitle2}) => {
         <img src={NetworkBg2} style={{margin:'0 auto', maxWidth:'100%',textAlign:'center'}} />
         </Box>
         <Grid item xs={12} sm={4}  style={{alignSelf:'center' }}>
-          <Typography  variant = 'body1' style={{marginLeft:'30px' }} > {text1}</Typography>
+          <Typography  variant = 'body1'  > {text1}</Typography>
         </Grid>
         <Box
         component={Grid}
@@ -85,7 +83,7 @@ const Network = ({text1, text2, textColor, texttitle ,texttitle2}) => {
       <Typography variant = 'body1'> {text2}</Typography>
     </Grid>
     </Grid>
-    </>
+  </Container>
   )
 }
 

@@ -4,15 +4,12 @@ import { Box } from '@material-ui/core';
 
 const styles = {
     root: {
-        width:'100vw',
+        width:'100%',
         minHeight:'70vh',
         backgroundImage: `url(${FooterImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center bottom',
-        position: 'absolute',
-        left: 0,
-        zIndex: '-1',
-        marginTop:'-500px',
+
 
     },
     headImage:{

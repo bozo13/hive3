@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { mapboxcontainer } from "./Mapbox.data"
 import ControlPanel from './Control-panel';
 import Pins from './Pins';
-import {Grid} from '@material-ui/core'
+import {Grid, Container} from '@material-ui/core'
 import CityInfo from './CityInfo';
 
 
@@ -99,6 +99,7 @@ class Mapbox extends PureComponent {
     
 
     return (
+    <Container>
     <Grid container  >
       <Grid item xs={12} style={mapboxBorder}>
       <MapGL
@@ -127,6 +128,7 @@ class Mapbox extends PureComponent {
     </MapGL>
     </Grid>
     </Grid>
+    </Container>
     );
   }
 }

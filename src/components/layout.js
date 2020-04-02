@@ -23,7 +23,7 @@ const Layout = ({ children }) => (
 
   <ThemeProvider theme={theme}>
   <HeadingTitle/> 
-  <Container>
+
       <CssBaseline />
           <Header/> 
             <Grid 
@@ -38,8 +38,6 @@ const Layout = ({ children }) => (
               {children}
  
           </Grid>
-      </Container> 
-      <FooterBox/>
     </ThemeProvider>
 
   )

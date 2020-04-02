@@ -3,17 +3,17 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import BerlinBg from '../../assets/images/BerlinBg.png'
+import { Container } from '@material-ui/core';
 
 
 const styles = {
   root: {
-      width:'100vw',
+      width:'100%',
       height:'59vh',
       backgroundImage: `url(${BerlinBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center top',
-      zIndex: '-1',
-      position: 'absolute',
+
       left: '0%',
       backgroundRepeat: 'no-repeat',
   },
@@ -32,11 +32,12 @@ const styles = {
 const Berlins = ({text1, text2, textColor, texttitle,  texttiltle2}) => {
 
   return (
+  <Box style ={styles.root}>
+    <Container >
      <Grid 
     container
     id={'Lage'}
   >
-  <Box   style ={styles.root} />
     <Box
       component={Grid}
       item
@@ -72,6 +73,8 @@ const Berlins = ({text1, text2, textColor, texttitle,  texttiltle2}) => {
     <Grid item xs={12}   style={styles.block}></Grid>
     <Grid item xs={12}   style={styles.block}></Grid>
     </Grid>
+    </Container>
+  </Box>
   )
 }
 
