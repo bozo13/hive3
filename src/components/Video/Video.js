@@ -4,15 +4,10 @@ import ReactPlayer from 'react-player';
 import {Container} from '@material-ui/core';
 
 
-const Style = {
-  video:{
-
-  },
-
-}
 
 
-const Vimeo = ({ placeimage ,videourl, text }) => {
+
+const Video = ({ placeimage ,videourl, text }) => {
 
   return (
 
@@ -34,4 +29,4 @@ const Vimeo = ({ placeimage ,videourl, text }) => {
   )
 }
 
-export default Vimeo
+export default Video

@@ -12,7 +12,7 @@ import Berlins from "./Berlins"
 import Network from './Network'
 import Downloadable from './Downloadable'
 import Kontakt from './Kontakt'
-import Vimeo from "./vimeo";
+import Video from "./Video";
 
 
 
@@ -39,7 +39,7 @@ const AllLayouts = ({ layoutData }) => {
     page_Pagebuilder_Layouts_Mapbox: Mapbox,
     page_Pagebuilder_Layouts_Downloadable: Downloadable,
     page_Pagebuilder_Layouts_Kontakt: Kontakt,
-    page_Pagebuilder_Layouts_Vimeoplayer: Vimeo,
+    page_Pagebuilder_Layouts_Vimeoplayer: Video,
     page_default: Default
   }
   
