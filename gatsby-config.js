@@ -77,6 +77,18 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`,
      `gatsby-plugin-sharp`,
+     // {
+     // resolve: 'gatsby-source-vimeo-all',
+     
+     //options: {
+     //   clientId: 'YOUR_CLIENT_ID',
+     //   clientSecret: 'YOUR_CLIENT_SECRET',
+     //   accessToken: 'YOUR_ACCESS_TOKEN'
+     // },
+    //},
+   // clientId: 'd99289e2e45ecf5d4d07b70513882724d66a68f9',
+   // clientSecret: '9wsMndqQG6pfzS8ttxixByI9o9l61g/ki5ZBbRMu5HWvPKnawwUUtLgbFKU9NYK8127Sa/tK+rAFQKGSzaB4pE1IYF3oV22hmySOlBKXV0/HKGFfUa7VdPjlvtBG+Gzb',
+   // accessToken: '385c0f88a45733c3520c4a51c6ce9dec'
  
   ],
 }

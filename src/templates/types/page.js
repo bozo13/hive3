@@ -120,6 +120,20 @@ export const query = graphql`
           texttitle
           texttilte2
         }
+        ... on WpPage_Pagebuilder_Layouts_Vimeoplayer {
+        fieldGroupName
+        text
+        videourl
+        placeimage {
+          remoteFile {
+                  childImageSharp {
+                      fluid(maxHeight: 1200, quality: 90, cropFocus: CENTER) {
+                          ...GatsbyImageSharpFluid
+                      }
+                  }
+            }
+        }
+      }
       }
       footers {
         ... on WpPage_Pagebuilder_Footers_Footer {
