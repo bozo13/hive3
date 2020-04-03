@@ -18,7 +18,7 @@ const Vimeo = ({ placeimage ,videourl, text }) => {
 
     <Container style={{ position: "relative", width: '100%'}} id={'Film'}>
 
-       <ReactPlayer 
+       <ReactPlayer  controls
           url={videourl}
           vimeoConfig={{ 
             playerOptions: { 
