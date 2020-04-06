@@ -9,6 +9,11 @@ module.exports = () => {
                     fieldGroupName
                     title
                 }
+                keyfacts2 {
+                  description
+                  fieldGroupName
+                  title
+                }
         }
 
   `

@@ -85,6 +85,11 @@ export const query = graphql`
                     fieldGroupName
                     title
                 }
+                keyfacts2 {
+                    description
+                    fieldGroupName
+                    title
+                }
             }
           
             ... on WpPage_Pagebuilder_Layouts_Mapbox {
