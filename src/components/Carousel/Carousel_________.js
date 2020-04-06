@@ -1,12 +1,13 @@
-import React,{ useState} from 'react';
+import React, { useState } from "react"
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Pagination from './Pagination';
 import CarouselBg from './CarouselBg';
 import SliderMap from './Slidermap';
+import LightBox from './lightBox';
 
 import { ZoomIn, ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
-import { MobileStepper, Paper, Typography, Grid, Box, Button, Container, useTheme ,useMediaQuery } from '@material-ui/core';
+import { MobileStepper, Paper, Typography, Grid, Box, Button, Container } from '@material-ui/core';
 
 
 
@@ -84,8 +85,6 @@ const styles = {
 
 
 class Carousel extends React.Component {
-
-
   state = {
     activeStep: 0,
   };
@@ -110,9 +109,7 @@ class Carousel extends React.Component {
   };
 
 
-
   render() {
-
     const CarouselItem =this.props.carouselitem;
     const Textfiled1 =this.props.textfiled1
     const Textfiled2 =this.props.textfiled2
@@ -122,7 +119,24 @@ class Carousel extends React.Component {
     console.log(CarouselItem)
     const maxSteps = CarouselItem.length;
     const { activeStep } = this.state;
+    const [showLightbox, setShowLightbox] = useState(false)
+    const [selectedImage, setSelectedImage] = useState(null)
 
+
+    const handleOpen = activeStep => e => {
+      setShowLightbox(true)
+      setSelectedImage(activeStep)
+    }
+    const handleClose = () => {
+      setShowLightbox(false)
+      setSelectedImage(null)
+    }
+    const handlePrevRequest = (i, length) => e => {
+      setSelectedImage((i - 1 + length) % length)
+    }
+    const handleNextRequest = (i, length) => e => {
+      setSelectedImage((i + 1) % length)
+    }
 
     return (
       
@@ -136,13 +150,22 @@ class Carousel extends React.Component {
       display={{ xs: "none", sm: "block" }}
     ></Box>
       <Grid item xs={12} sm= {5} style={styles.root}> 
-      <ZoomIn style={styles.ZoomIn} />
-        <SwipeableViews index={activeStep} onChangeIndex={this.handleStepChange}  >
+      <ZoomIn style={styles.ZoomIn}  handleOpen={handleOpen} />
+        <AutoPlaySwipeableViews index={activeStep} onChangeIndex={this.handleStepChange}  >
 
         {CarouselItem.map((Carousel, activeStep) => (
-          <SliderMap key={activeStep} data={Carousel} ></SliderMap>
+          <SliderMap key={activeStep} data={Carousel} >
+          {showLightbox && selectedImage !== null && (
+            <LightBox
+              images={Carousel}
+              handleClose={handleClose}
+              handleNextRequest={handleNextRequest}
+              handlePrevRequest={handlePrevRequest}
+              selectedImage={selectedImage}
+            />
+          )}</SliderMap>
         ))}
-        </SwipeableViews>
+        </AutoPlaySwipeableViews>
           <Pagination dots={maxSteps} index={activeStep} onChangeIndex={this.handleStepChange} />
           
           <MobileStepper
