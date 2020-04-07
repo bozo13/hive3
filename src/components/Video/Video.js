@@ -1,7 +1,7 @@
 import React from "react";
 import FluidImage from "../FluidImage";
 
-import {Container, Grid, TransitionProps, Slide, Button,Dialog, AppBar, Toolbar , IconButton} from '@material-ui/core';
+import {Container, Grid,Box, TransitionProps, Slide, Button,Dialog, AppBar, Toolbar , IconButton} from '@material-ui/core';
 import {Close } from '@material-ui/icons'
 
 import Vimeo from '@u-wave/react-vimeo';
@@ -40,26 +40,22 @@ const Video = ({ placeimage ,videourl, text }) => {
         video="386921713"
         width= '100%'
         height='100%'
-        responsive = 'true'
+        responsive = 'true' controls = 'false'
         />
     </Grid>
-    <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-    <AppBar >
-          <Toolbar>
-          <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-            <Close />
-          </IconButton>
-         
-          <Button autoFocus color="inherit" onClick={handleClose}>
-            close
-          </Button>
-        </Toolbar>
-      </AppBar>
-       <Vimeo 
+    <Dialog fullWidth maxWidth    open={open} onClose={handleClose} TransitionComponent={Transition} style={{
+
+    }}>
+ 
+        <Vimeo 
         video="386921713"
-        width= '100%'
-        height='100%'
+        width= '1280px'
+        height='960px'
         responsive = 'true'
+        controls = 'false'
+        style={{
+        
+         }}
         />
         </Dialog>
     </Container>
