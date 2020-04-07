@@ -3,8 +3,23 @@ import FluidImage from "../FluidImage";
 
 import {Container, Grid,Box, TransitionProps, Slide, Button,Dialog, AppBar, Toolbar , IconButton} from '@material-ui/core';
 import {Close } from '@material-ui/icons'
-
+import PlayButton from '../../assets/svg/playButton.svg'
 import Vimeo from '@u-wave/react-vimeo';
+
+
+const styles ={
+  PlayButton:{
+    position: "absolute",
+    top: `calc( 50% - 20px )`,
+    left: "50%",
+    width: '90px',
+    height: '104px',
+    transform: "translate(-50%, -50%)",
+    textAlign: 'center',
+    lineHeight: 1,
+    backgroundImage: `url(${PlayButton})`
+  }
+}
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -33,26 +48,19 @@ const Video = ({ placeimage ,videourl, text }) => {
      
 
     <FluidImage image={placeimage} />
-    <Button  onClick={handleClickOpen}>
-         onClick
-    </Button>
-    <Vimeo 
-        video="386921713"
-        width= '100%'
-        height='100%'
-        responsive = 'true' controls = 'false'
-        />
+    <Button  onClick={handleClickOpen}  style={styles.PlayButton}/>
     </Grid>
-    <Dialog fullWidth maxWidth    open={open} onClose={handleClose} TransitionComponent={Transition} style={{
+    <Dialog fullWidth maxWidth  open={open} onClose={handleClose} TransitionComponent={Transition} style={{
 
     }}>
  
-        <Vimeo 
-        video="386921713"
+        <Vimeo  
+        video={videourl}
         width= '1280px'
         height='960px'
         responsive = 'true'
-        controls = 'false'
+        controls = 'true'
+        autoplay = 'true'
         style={{
         
          }}
