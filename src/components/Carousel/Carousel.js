@@ -149,16 +149,13 @@ class Carousel extends React.Component {
     const Texttitle =this.props.texttitle
     const Texttitle2 =this.props.texttilte2
     const maxSteps = CarouselItem.length;
+    
+
 
     const Images =  CarouselItem 
     const { activeStep,isOpen } = this.state;
     console.log(CarouselItem)
-    const array = []
 
-    CarouselItem.forEach(Image =>
-      array.push( <NonStretchedImage fluid={Image.carouselimg } />) 
-    )
-    console.log('name' + typeof(array))
 
 
     //end of wordpress Props Mapping Method.
@@ -204,13 +201,13 @@ class Carousel extends React.Component {
     ></Box>
       <Grid item xs={12} sm= {5} style={styles.root}> 
       <ZoomIn style={styles.ZoomIn}  onClick={() => this.setState({ isOpen: true })}/>
-      {!!isOpen && activeStep !== null && (
+      {isOpen && activeStep !== null && (
         <Lightbox
         enableZoom={false}
         clickOutsideToClose={true}
-          mainSrc={array[activeStep]}
-          nextSrc={array[(activeStep + 1) % maxSteps]}
-          prevSrc={array[(activeStep + maxSteps - 1) % maxSteps]}
+          mainSrc={CarouselItem[activeStep].carouselimg.remoteFile.childImageSharp.fluid.src}
+          nextSrc={CarouselItem[(activeStep + 1) % maxSteps].carouselimg.remoteFile.childImageSharp.fluid.src}
+          prevSrc={CarouselItem[(activeStep + maxSteps - 1) % maxSteps].carouselimg.remoteFile.childImageSharp.fluid.src}
           onCloseRequest={() => this.setState({ isOpen: false })}
           onMovePrevRequest={() =>
             this.setState({
