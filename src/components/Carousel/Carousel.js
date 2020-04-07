@@ -4,6 +4,11 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import Pagination from './Pagination';
 import CarouselBg from './CarouselBg';
 import SliderMap from './Slidermap';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+import FluidImage from "../../components/FluidImage"
+import NonStretchedImage from './NonStretchedImage'
+
 
 import { ZoomIn, ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
 import { MobileStepper, Paper, Typography, Grid, Box, Button, Container, useTheme ,useMediaQuery } from '@material-ui/core';
@@ -85,43 +90,105 @@ const styles = {
 
 class Carousel extends React.Component {
 
+  //Props setting constructor
+  constructor(props) {
+    super(props);
 
-  state = {
-    activeStep: 0,
-  };
-
-
-  
-
+    this.state = {
+      activeStep: 0,
+      isOpen: false,
+    };
+  }
+  //end of Props setting constructor
+  //lightBox state setting
+  /*
+  openLightbox() {
+    this.setState({ isOpen: true });
+  }
+  closeLightbox() {
+    this.setState({ isOpen: false });
+  }
+  moveNext() {
+    this.setState(prevState => ({
+      index: (prevState.index + 1) % images.length,
+    }));
+  }
+  movePrev() {
+    this.setState(prevState => ({
+      index: (prevState.index + images.length - 1) % images.length,
+    }));
+  }
+  */
+ //end of lightBox state setting
+ //Swipe state setting
   handleNext = () => {
-    this.setState(prevState => ({
-      activeStep: prevState.activeStep + 1,
-    }));
-  };
+      this.setState(prevState => ({
+        activeStep: prevState.activeStep + 1,
+      }));
+    };
 
-  handleBack = () => {
-    this.setState(prevState => ({
-      activeStep: prevState.activeStep - 1,
-    }));
-  };
+    handleBack = () => {
+      this.setState(prevState => ({
+        activeStep: prevState.activeStep - 1,
+      }));
+    };
 
-  handleStepChange = activeStep => {
-    this.setState({ activeStep });
-  };
-
+    handleStepChange = activeStep => {
+      this.setState({ activeStep });
+    };
+  //end of Swipe state setting
 
 
   render() {
-
+    //wordpress Props Mapping Method.
+    const {data} = this.props;
     const CarouselItem =this.props.carouselitem;
     const Textfiled1 =this.props.textfiled1
     const Textfiled2 =this.props.textfiled2
     const Textfiled3 =this.props.textfiled3
     const Texttitle =this.props.texttitle
     const Texttitle2 =this.props.texttilte2
-    console.log(CarouselItem)
     const maxSteps = CarouselItem.length;
-    const { activeStep } = this.state;
+
+    const Images =  CarouselItem 
+    const { activeStep,isOpen } = this.state;
+    console.log(CarouselItem)
+    const array = []
+
+    CarouselItem.forEach(Image =>
+      array.push( <NonStretchedImage fluid={Image.carouselimg } />) 
+    )
+    console.log('name' + typeof(array))
+
+
+    //end of wordpress Props Mapping Method.
+
+    //lightBox state Mapping Method.
+    /*
+    let lightbox;
+    if (this.state.isOpen) {
+      lightbox = (
+        <Lightbox
+          mainSrc={CarouselItem[this.state.index]}
+          nextSrc={CarouselItem[(this.state.index + 1) % images.length]}
+          prevSrc={
+            CarouselItem[(this.state.index + CarouselItem.length - 1) % CarouselItem.length]
+          }
+        
+          onCloseRequest={this.closeLightbox}
+          onMovePrevRequest={this.movePrev}
+          onMoveNextRequest={this.moveNext}
+          onImageLoadError={App.onImageLoadError}
+          imageTitle={titles[this.state.index]}
+          imageCaption={captions[this.state.index]}
+        />
+      );
+    }
+    */
+    //end of lightBox state Mapping Method.
+
+
+
 
 
     return (
@@ -136,12 +203,35 @@ class Carousel extends React.Component {
       display={{ xs: "none", sm: "block" }}
     ></Box>
       <Grid item xs={12} sm= {5} style={styles.root}> 
-      <ZoomIn style={styles.ZoomIn} />
-        <SwipeableViews index={activeStep} onChangeIndex={this.handleStepChange}  >
+      <ZoomIn style={styles.ZoomIn}  onClick={() => this.setState({ isOpen: true })}/>
+      {!!isOpen && activeStep !== null && (
+        <Lightbox
+        enableZoom={false}
+        clickOutsideToClose={true}
+          mainSrc={array[activeStep]}
+          nextSrc={array[(activeStep + 1) % maxSteps]}
+          prevSrc={array[(activeStep + maxSteps - 1) % maxSteps]}
+          onCloseRequest={() => this.setState({ isOpen: false })}
+          onMovePrevRequest={() =>
+            this.setState({
+              activeStep: (activeStep + maxSteps - 1) % maxSteps,
+            })
+          }
+          onMoveNextRequest={() =>
+            this.setState({
+              activeStep: (activeStep + 1) % maxSteps,
+            })
+          }
+        />
+      )}
+        <SwipeableViews index={activeStep}  >
 
         {CarouselItem.map((Carousel, activeStep) => (
-          <SliderMap key={activeStep} data={Carousel} ></SliderMap>
+     
+          <SliderMap key={activeStep} data={Carousel} />
+          
         ))}
+
         </SwipeableViews>
           <Pagination dots={maxSteps} index={activeStep} onChangeIndex={this.handleStepChange} />
           
@@ -177,6 +267,7 @@ class Carousel extends React.Component {
         display={{ xs: "none", sm: "block" }}
       >
       <CarouselBg />  
+
       </Box>
         <Grid item xs={12} md={4} style={styles.freiraum}>
           <Box style={styles.Texttitle}>
@@ -201,7 +292,7 @@ class Carousel extends React.Component {
 
           </Grid>
         </Grid>
-
+       
         </Container>
       
     )
@@ -209,12 +300,3 @@ class Carousel extends React.Component {
 }
 
 export default Carousel;
-
-
-
-
-/*
-<div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
-<div style={Object.assign({}, styles.slide, styles.slide2)}>slide n°2</div>
-<div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
-*/

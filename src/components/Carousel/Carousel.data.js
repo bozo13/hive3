@@ -9,6 +9,7 @@ module.exports = () => {
               childImageSharp {
                     fluid(maxHeight: 1200, quality: 90, cropFocus: CENTER) {
                         ...GatsbyImageSharpFluid
+                        presentationWidth
                     }
                 }
               }
