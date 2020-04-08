@@ -13,6 +13,7 @@ import Network from './Network'
 import Downloadable from './Downloadable'
 import Kontakt from './Kontakt'
 import Video from "./Video";
+import Anbindung from './Anbindung'
 
 
 
@@ -35,6 +36,7 @@ const AllLayouts = ({ layoutData }) => {
     page_Pagebuilder_Layouts_Hero: Hero,
     page_Pagebuilder_Layouts_TextTitle: TextTitle,
     page_Pagebuilder_Layouts_Keyfacts: KeyFacts,
+    page_Pagebuilder_Layouts_Anbindung: Anbindung,
     page_Pagebuilder_Layouts_Carousels: Carousel,
     page_Pagebuilder_Layouts_Mapbox: Mapbox,
     page_Pagebuilder_Layouts_Downloadable: Downloadable,

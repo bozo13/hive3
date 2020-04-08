@@ -1,0 +1,77 @@
+.anbindungP1{
+    color: #FFFFFF;
+    font-family:'GraphitRegular';
+    text-align: right;
+    padding: 0;
+    margin: 0;
+
+}
+.anbindungP2{
+    color: #F8C05E;
+    font-family:'GraphitRegular';
+    text-align: right;
+    padding: 0;
+    margin: 0;
+
+}
+.anbindungTitle1{
+    color: #F8C05E;
+    font-family:'GraphitRegular';
+    padding: 0;
+    margin: 0;
+
+
+}
+.anbindungTitle2{
+    color: #303340;
+    font-family:'GraphitRegular';
+    padding: 0;
+    margin: 0;
+
+}
+.AnbindungBg{
+    background-image: url(../../assets/svg/anbindung.svg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 20rem;
+    min-height: 23rem;
+    
+}
+
+.EntfernungenBg{
+    background-image: url(../../assets/svg/entfernungen.svg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width:20rem;
+    min-height: 23rem;
+}
+.topTtile1{
+    margin: 3rem 0 10px 0;
+    font-family: 'Ostbahnhof';
+    color: #F8C05E;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.topTtile2{
+    margin: 3rem 0 0px 0;
+    font-family: 'Ostbahnhof';
+    color: #F8C05E;
+    font-size: 2rem;
+    text-align: center;
+}
+.table{
+    width: 80%;
+    margin: 1rem auto;
+}
+td{
+
+    padding: 0;
+    margin: 0;
+}
+tr{
+    line-height: 1rem;
+    margin: 0 2rem;
+}
