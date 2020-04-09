@@ -4,17 +4,19 @@ import styles from "./Anbindung.module.scss"
 import AnbindungBg from '../../assets/svg/anbindung.svg'
 import EntfernungenBg from '../../assets/svg/entfernungen.svg'
 import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+import Pagination from '../Carousel/Pagination';
 
 
 const Anbindung = ({   anbindungen, title1, title2, entfernungen, index  }) => {
   console.log(styles)
-
+  const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
  
   return (
   <Container>
 <Grid container  spacing ={2} justify='center' alignItems='center'>
- 
-        <Box className={styles.AnbindungBg}>
+<AutoPlaySwipeableViews >
+        <Box className={styles.AnbindungBg} index={1}>
         <h4 className={styles.topTtile1}>{title1}</h4> 
           <table className={styles.table}>
       
@@ -29,7 +31,7 @@ const Anbindung = ({   anbindungen, title1, title2, entfernungen, index  }) => {
           </table>
         </Box> 
         
-        <Box className={styles.EntfernungenBg}>
+        <Box className={styles.EntfernungenBg} index={2}>
         <h4 className={styles.topTtile2}>{title2}</h4> 
           <table className={styles.table}>
 
@@ -43,7 +45,9 @@ const Anbindung = ({   anbindungen, title1, title2, entfernungen, index  }) => {
 
           </table>
         </Box> 
-
+        </AutoPlaySwipeableViews>
+        <Pagination dots={2} index={index} />
+        
         </Grid>
         </Container>
   )
