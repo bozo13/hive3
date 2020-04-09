@@ -3,16 +3,17 @@ import { Container,makeStyles,Box,Table,TableRow, TableHead, TableCell, Grid, Ta
 import styles from "./Anbindung.module.scss"
 import AnbindungBg from '../../assets/svg/anbindung.svg'
 import EntfernungenBg from '../../assets/svg/entfernungen.svg'
+import SwipeableViews from 'react-swipeable-views';
 
 
-const Anbindung = ({   anbindungen, title1, title2, entfernungen  }) => {
+const Anbindung = ({   anbindungen, title1, title2, entfernungen, index  }) => {
   console.log(styles)
-return (
-  <Container>
 
-  <Grid container  spacing ={2} justify='center' alignItems='center'>
  
-        
+  return (
+  <Container>
+<Grid container  spacing ={2} justify='center' alignItems='center'>
+ 
         <Box className={styles.AnbindungBg}>
         <h4 className={styles.topTtile1}>{title1}</h4> 
           <table className={styles.table}>
@@ -42,6 +43,7 @@ return (
 
           </table>
         </Box> 
+
         </Grid>
         </Container>
   )

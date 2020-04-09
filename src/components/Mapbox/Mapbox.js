@@ -54,8 +54,8 @@ class Mapbox extends PureComponent {
     super(props);
     this.state = {
       viewport: {
-        latitude: 46.0568649,
-        longitude: 14.5093471,
+        latitude: 52.503086,
+        longitude:13.454428,
         zoom: 14,
         bearing: 0,
         pitch: 0
