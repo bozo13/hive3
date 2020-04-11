@@ -1,0 +1,34 @@
+.FirstTitle{
+    margin: 0;
+    font-size: 4rem!important;
+    color: #303340 !important;
+    line-height: 1 !important;
+}
+.SecondTitle{
+    font-size: 4rem!important;
+    margin:  0  0  0 8.33% !important;
+    color: #DFA629 !important;
+    line-height: 1 !important;
+}
+.TitleWrap{
+    padding: 3rem 0; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    .FirstTitle{
+        font-size: 4rem!important;
+        line-height: 1 !important;
+    }
+    .SecondTitle{
+        font-size: 4rem!important;
+        margin:  0!important;
+        color: #DFA629 !important;
+        line-height: 1 !important;
+    }
+    .TitleWrap{
+        padding: 3rem 0; 
+    }
+    
+   
+  }

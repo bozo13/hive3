@@ -35,7 +35,7 @@
     background-size: cover;
     background-position: center center;
     width: 20rem;
-    min-height: 23rem;
+    min-height:23rem;
     
 }
 
@@ -74,4 +74,14 @@ td{
 tr{
     line-height: 1rem;
     margin: 0 2rem;
+}
+.Pagination{
+    position: static;
+    width: 10rem;
+    margin: -65px 0px 50px 0px;
+    z-index: 22;
+    align-items: end;
+    display: flex;
+    justify-content: start;
+
 }

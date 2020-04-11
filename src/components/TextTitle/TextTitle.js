@@ -1,5 +1,6 @@
 import React from "react"
-import { Typography, Theme, Grid,Box } from "@material-ui/core"
+import { Typography, Theme, Grid,Box, Container } from "@material-ui/core"
+import Styles from './TextTitle.module.scss'
 import BgTop from '../../assets/images/BgTop.png'
 
 const styles = {
@@ -25,20 +26,24 @@ const styles = {
 const TextTitle = ({ text ,texttitle2}) => {
 
   return (
-    <Grid item xs={12} style={styles.TextTitle}>
+   <Container >
+    <Grid container className={Styles.TitleWrap}>
+      <Box component={Grid} item xs={2} display={{ xs: "none", sm: "block" }} />
 
-      <div style={{
-    
-        padding: '3rem',
-        textAlign: 'center',
+    <Grid item xs={12} lg={8}>
+       <Typography variant='h2' className={Styles.FirstTitle}>{text} </Typography>
+       <Typography variant='h2' className={Styles.SecondTitle}>{texttitle2} </Typography>
       
-      }}>
-        
-       <Typography variant='h2' >{text} </Typography>
-       <Typography variant='h2' color='secondary'>{texttitle2} </Typography>
-      </div>
-
     </Grid>
+
+        <Box
+        component={Grid}
+        item
+        xs={2}
+        display={{ xs: "none", sm: "block" }}
+      ></Box>
+      </Grid>
+    </Container>
   )
 }
 
