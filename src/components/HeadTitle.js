@@ -3,6 +3,7 @@ import HeadingImage from '../assets/images/HeadImage.jpg'
 import { Box, Grid,Container }  from '@material-ui/core';
 import Biglogo from '../assets/svg/hiveBigLogo.svg'
 import FluidImage from "./FluidImage"
+import Styles from './HeaderTitle.module.scss'
 
 
 const styles = {
@@ -36,9 +37,10 @@ class  HeadTtile extends React.Component {
             direction="row"
             justify="center"
             alignItems="center"
+            className = {Styles.Container}
             >
-            <Grid item xs={3} sm={2}  style={{marginTop: '-150px', maxWidth:'100%',textAlign:'center', marginTop:'30%' }}>
-                <img src={Biglogo} style={{marginTop: '-100px', maxWidth:'100%',textAlign:'center'}} />
+            <Grid item xs={3} sm={2} className ={Styles.logoContainer}>
+                <img src={Biglogo} className ={Styles.Biglogo}/>
             </Grid>
             </Grid>
             </Container>

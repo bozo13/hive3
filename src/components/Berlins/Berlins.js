@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import BerlinBg from '../../assets/images/BerlinBg.png'
 import { Container } from '@material-ui/core';
+import Styles from './Berlin.module.scss'
 
 
 const styles = {
@@ -46,8 +47,8 @@ const Berlins = ({text1, text2, textColor, texttitle,  texttiltle2}) => {
       />
 
       <Grid item xs={12} sm={9} >
-        <Typography variant="h2" style={styles.texttitle}>{texttitle}</Typography>
-        <Typography variant="h2" color='secondary' style = {styles.texttiltle2}>{  texttiltle2}</Typography>
+        <Typography variant="h2" className={Styles.texttitle}>{texttitle}</Typography>
+        <Typography variant="h2" className = {Styles.texttiltle2}>{texttiltle2}</Typography>
       </Grid>
   
       <Box

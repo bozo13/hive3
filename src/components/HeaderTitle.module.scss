@@ -1,0 +1,31 @@
+.logoContainer
+{
+    
+    max-width: 100% ;
+    text-align: center ;
+}
+.Biglogo{
+    max-width:100%;
+    text-align:center;
+}
+
+.Container{
+    min-height: 100vh;
+    margin-top: 64px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .logoContainer
+    {
+       
+        max-width: 100% ;
+        text-align: center ;
+    }
+    .Biglogo{
+       
+        max-width:100%;
+        text-align:center;
+    }
+    }     

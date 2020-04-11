@@ -1,0 +1,21 @@
+.texttitle{
+    padding-top: 3rem;
+    color: #303340;
+}
+.texttiltle2{
+    padding-left : 12%;
+    padding-bottom : 0rem;
+    color: #DFA629;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .texttitle{
+        font-size: 2rem!important;
+    }
+    .texttiltle2{
+        padding-left : 0;
+        padding-bottom : 0rem;
+        font-size: 2rem!important;
+    }
+}
