@@ -28,12 +28,12 @@
 @media only screen and (max-width: 600px) {
     .root{
         width: 100%;
-        min-height: 100%;
+        min-height: 20vh;
         background-image: url(../../assets/svg/TextTitleBg.svg) ;
         background-size: cover;
         background-size:100% 100%;
         background-repeat: no-repeat;
-        margin-top: 0;
+        margin-top: -40vh;
   }
     .FirstTitle{
         font-size: 3rem!important;
@@ -46,8 +46,8 @@
         line-height: 1 !important;
     }
     .TitleWrap{
-        padding: 2rem 0; 
-        margin-top: 100%;
+        padding:0 0; 
+        margin-top: 20vh;
     }
     
    
