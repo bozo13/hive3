@@ -1,0 +1,37 @@
+.title{
+  
+    color: #DFA629 !important;
+    text-align: center;
+    font-size: 4rem!important;
+   }
+
+
+   .img1{
+        min-width: 6rem;
+   };
+   .img2{ margin: 260px 0px  0px -81px;
+    min-width: 6rem;
+    };
+   .text1{ padding: 3rem 2rem 2rem 2rem };
+   .text2{padding: 16rem 2rem 2rem 2rem};
+   .root{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        padding-top: 7rem;
+    }
+
+   @media only screen and (max-width: 600px) {
+
+    .title{
+        font-size: 2.5rem!important;
+       }
+    .text1{ padding: 2rem 2rem 2rem 2rem };
+    .text2{padding: 18rem 2rem 2rem 2rem };
+    .img2{ margin: 260px 0px  0px -281px;
+        min-width: 6rem;
+        };
+   }

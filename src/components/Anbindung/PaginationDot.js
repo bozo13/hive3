@@ -12,14 +12,15 @@ const styles = {
     textAlign: 'cetner',
   },
   dot: {
-    border: `2px solid  `,
+    border: `2px solid #F8C05E `,
     height: 12,
     width: 12,
     borderRadius: 6,
     margin: 3,
   },
   active: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'rgba(248,192,94,0.6)',
+
   },
 };
 

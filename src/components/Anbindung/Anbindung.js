@@ -3,6 +3,8 @@ import { Container,makeStyles,Box,Table,TableRow, TableHead, TableCell, Grid, Ta
 import Styles from "./Anbindung.module.scss"
 import AnbindungBg from '../../assets/svg/anbindung.svg'
 import EntfernungenBg from '../../assets/svg/entfernungen.svg'
+import Anbindungobjekt from '../../assets/svg/anbindungobject.svg'
+import BerlinBgCounter from '../../assets/images/BerlinBgCounter.png'
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Paginations from './Pagination';
@@ -44,15 +46,12 @@ class Anbindung extends React.Component {
   
 
   return (
+
+  <Box className={Styles.Root}  >
   <Container>
-  <Box
-  component={Grid}
-  style={Styles.bgCarousel}
-  item
-  xs={1}
-  display={{ xs: "none", sm: "block" }}
-></Box>
-  <Grid item xs={12} sm={3} alignself='center' justifyself = 'center'>
+  <Grid container  className={ Styles.container}>
+  <Box component={Grid} className={Styles.bgCarousel} item  xs={2} display={{ xs: "none", sm: "block" }} />
+  <Grid item xs={12} sm={4} alignself='center' justifyself = 'center' style={{position:'relative',}}>
 
   <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} >
       <Box style={Object.assign({}, styles1.slide, styles1.slide1)} >
@@ -89,10 +88,12 @@ class Anbindung extends React.Component {
           </Box>
         
         </SwipeableViews>
-        <Paginations dots={2} index={index} onChangeIndex={this.handleChangeIndex}  className={Styles.Paginations} />
-       
+        <Paginations dots={2} index={index} onChangeIndex={this.handleChangeIndex}  />
         </Grid>     
+        <Box component={Grid} className={Styles.Anbindungobjekt} item  xs={6} display={{ xs: "none", sm: "block" }} />
+        </Grid>
         </Container>
+        </Box>  
   )
 }
 }
