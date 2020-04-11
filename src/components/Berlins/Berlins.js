@@ -9,7 +9,7 @@ import { Container } from '@material-ui/core';
 const styles = {
   root: {
       width:'100%',
-      height:'59vh',
+      minHeight:'59vh',
       backgroundImage: `url(${BerlinBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center top',

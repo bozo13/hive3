@@ -1,0 +1,15 @@
+.texttitle1{
+    padding: 2rem 0 0 2rem;
+    color: #303340;
+  }
+.texttitle2{
+    color: #303340;
+    padding: 0 0 2rem 0;
+  }
+
+
+@media only screen and (max-width: 600px) {
+    .texttitle1{
+        padding: 2rem 0 0 0rem;
+      }
+    }     

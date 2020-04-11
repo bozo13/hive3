@@ -37,8 +37,8 @@ class  HeadTtile extends React.Component {
             justify="center"
             alignItems="center"
             >
-            <Grid item xs={3} sm={2}  style={{margin:'0 auto', maxWidth:'100%',textAlign:'center', marginTop:'30%' }}>
-                <img src={Biglogo} style={{margin:'0 auto', maxWidth:'100%',textAlign:'center'}} />
+            <Grid item xs={3} sm={2}  style={{marginTop: '-150px', maxWidth:'100%',textAlign:'center', marginTop:'30%' }}>
+                <img src={Biglogo} style={{marginTop: '-100px', maxWidth:'100%',textAlign:'center'}} />
             </Grid>
             </Grid>
             </Container>

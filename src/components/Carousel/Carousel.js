@@ -8,6 +8,8 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import FluidImage from "../../components/FluidImage"
 import NonStretchedImage from './NonStretchedImage'
+import Styles from "./Carousel.module.scss"
+
 
 
 import { ZoomIn, ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
@@ -57,7 +59,7 @@ const styles = {
   },
   Texttitle:{
     margin: '0rem 5rem 5rem -5rem',
-    '&h3':{
+    '& h3':{
       marginLeft: '2rem',
       color:'#FF0',
         },
@@ -75,15 +77,7 @@ const styles = {
     margin: '1.25rem 0.875rem',
     zIndex: '10',
   },
-  texttilte1:{
-    padding: '0rem',
-    zIndex: '11',
-  },
-  texttilte2:{
-    paddingTop: '0rem',
-    paddingLeft: '2rem',
-    zIndex: '11',
-  }
+
 }
 
 
@@ -266,23 +260,23 @@ class Carousel extends React.Component {
       <CarouselBg />  
 
       </Box>
-        <Grid item xs={12} md={4} style={styles.freiraum}>
-          <Box style={styles.Texttitle}>
-            <Typography  variant="h3" style={styles.texttilte1} >{ Texttitle } </Typography>
-            <Typography  variant="h3" style={styles.texttilte2} >{ Texttitle2 } </Typography>
+        <Grid item xs={12} md={4} className={Styles.freiraum}>
+          <Box className={Styles.Texttitle}>
+            <Typography  variant="h3" className={Styles.texttilte1} >{ Texttitle } </Typography>
+            <Typography  variant="h3" className={Styles.texttilte2} >{ Texttitle2 } </Typography>
           </Box>
-          <Box style={styles.block1}>
+          <Box className={Styles.block1}>
             <Typography  variant='body1' > 
                 {Textfiled1} 
             </Typography>
           </Box>
-          <Box style={styles.block2}>
+          <Box className={Styles.block2}>
             <Typography  variant="body1" > 
                 {Textfiled2} 
             </Typography>
           </Box>
-          <Box>
-          <Typography  variant="body1" style={styles.block3}> 
+          <Box className={Styles.block3}>
+          <Typography  variant="body1" > 
               {Textfiled3} 
           </Typography>
         </Box>

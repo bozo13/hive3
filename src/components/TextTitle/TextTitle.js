@@ -1,7 +1,7 @@
 import React from "react"
 import { Typography, Theme, Grid,Box, Container } from "@material-ui/core"
 import Styles from './TextTitle.module.scss'
-import BgTop from '../../assets/images/BgTop.png'
+import AnbindungBg from '../../assets/svg/anbindung.svg'
 
 
 

@@ -52,7 +52,7 @@ class Anbindung extends React.Component {
   xs={1}
   display={{ xs: "none", sm: "block" }}
 ></Box>
-  <Grid item xs={4} alignself='center' justifyself = 'center'>
+  <Grid item xs={12} sm={3} alignself='center' justifyself = 'center'>
 
   <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} >
       <Box style={Object.assign({}, styles1.slide, styles1.slide1)} >
