@@ -1,3 +1,12 @@
+.root{
+      width: 100%;
+      min-height:60vh;
+      background-image: url(../../assets/svg/TextTitleBg.svg) ;
+      background-size: cover;
+      background-size:100% 100%;
+      background-repeat: no-repeat;
+      margin-top: -30vh;
+}
 .FirstTitle{
     margin: 0;
     font-size: 4rem!important;
@@ -11,23 +20,34 @@
     line-height: 1 !important;
 }
 .TitleWrap{
+    margin-top: 30vh;
     padding: 3rem 0; 
 }
 
 
 @media only screen and (max-width: 600px) {
+    .root{
+        width: 100%;
+        min-height: 100%;
+        background-image: url(../../assets/svg/TextTitleBg.svg) ;
+        background-size: cover;
+        background-size:100% 100%;
+        background-repeat: no-repeat;
+        margin-top: 0;
+  }
     .FirstTitle{
-        font-size: 4rem!important;
+        font-size: 3rem!important;
         line-height: 1 !important;
     }
     .SecondTitle{
-        font-size: 4rem!important;
+        font-size: 3rem!important;
         margin:  0!important;
         color: #DFA629 !important;
         line-height: 1 !important;
     }
     .TitleWrap{
-        padding: 3rem 0; 
+        padding: 2rem 0; 
+        margin-top: 100%;
     }
     
    
