@@ -1,11 +1,16 @@
 import React from "react"
-import { Container,makeStyles,Table,TableRow, TableHead, TableCell, Grid, TableFooter, TableContainer,TableBody } from '@material-ui/core'
+import { Container,makeStyles,Table,TableRow, TableHead, TableCell, Grid, TableFooter, TableContainer,TableBody,Typography } from '@material-ui/core'
 
 
 const Keyfacts = ({ keyfacts, keyfacts2  }) => {
 
 return (
   <Container>
+  <Grid container>
+  <Grid item xs={12}    >
+    <Typography  color='secondary' variant = 'h3' align='center'>Keyfacts</Typography>
+  </Grid>
+</Grid>
   <Grid container  spacing ={ 2}>
         <Grid item  xs={12} sm ={6} >
           <Table>

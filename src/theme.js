@@ -132,7 +132,10 @@ const theme = createMuiTheme({
         root: {
         padding: '15px 0px',
         borderBottom: `0.1rem solid #F8C05E`,
-        verticalAlign:'text-top',
+        verticalAlign:'text-top', 
+        margin:'0 15px',
+        wordWrap: 'break-word',
+      
         
         "&:first-child": {
           color: "#DFA629",
@@ -141,12 +144,12 @@ const theme = createMuiTheme({
           fontFamily: 'Ostbahnhof', 
           letterSpacing: '0.12rem',
           lineHeight: '1.22rem',
+          paddingRight: '5px'
          },
    
          "&:last-child": {
           fontFamily: 'GraphitRegular', 
           color: "#232E3C",
-          paddingLeft: '15px',
          
          },
        

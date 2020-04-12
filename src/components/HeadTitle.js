@@ -39,7 +39,7 @@ class  HeadTtile extends React.Component {
             alignItems="center"
             className = {Styles.Container}
             >
-            <Grid item xs={3} sm={2} className ={Styles.logoContainer}>
+            <Grid item xs={5} sm={2} className ={Styles.logoContainer}>
                 <img src={Biglogo} className ={Styles.Biglogo}/>
             </Grid>
             </Grid>

@@ -9,18 +9,12 @@ import { flexbox } from '@material-ui/system';
 import Styles from './Downloadable.module.scss'
  
 
-const styles = {
-
-
-
-}
-
 const Downloadable = ({text1, text2, textColor, texttitle}) => {
 
   return (
      <Grid container
      justify="center"
-     alignItems="center" className= { Styles.container}>
+     className= { Styles.container}>
       <Grid item xs={12}   >
         <Typography   variant='h2' className={Styles.title} > { texttitle}</Typography>
       </Grid>
@@ -44,7 +38,7 @@ const Downloadable = ({text1, text2, textColor, texttitle}) => {
     </Box>
   
     </Grid>
-    <Grid item xs={12}  className= {Styles.text2}>
+    <Grid item xs={12}  className= {Styles.space}>
     
   </Grid>
 

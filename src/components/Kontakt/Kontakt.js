@@ -41,10 +41,11 @@ const styles = {
     minHeight:'100%',
     backgroundImage: `url(${FooterImage})`,
     backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center bottom',
 },
   texttitle:{
-    margin: '6rem 0',
+    margin: '0 0 3rem 0',
     textAlign: 'center',
   },
   form:{
@@ -56,6 +57,7 @@ const styles = {
   formControlLabel:{
     marginTop:'1rem',
     color: '#DFA629',
+
     fontSize: '0.875rem'
   },
   padding: {
@@ -105,7 +107,7 @@ const Kontakt = ({text1, text2, textColor, texttitle}) => {
   
     <Grid container>
       <Grid item xs={12}   style={ styles.texttitle} >
-        <Typography  color='light' variant = 'h2' >{texttitle}</Typography>
+        <Typography  color='secondary' variant = 'h3' >{texttitle}</Typography>
       </Grid>
     </Grid>
 

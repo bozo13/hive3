@@ -1,0 +1,19 @@
+.Button{
+    display: inline-block;
+    color: #303340!important;
+    text-decoration: none; 
+    font-family: 'Ostbahnhof'!important;
+    font-size: 1.2rem!important;
+    letter-spacing: 0.125rem;
+    :hover {
+        color: #DFA629!important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Button{
+        display: block!important;
+        width: 100%!important; 
+        padding: 1rem!important;
+    }
+}
