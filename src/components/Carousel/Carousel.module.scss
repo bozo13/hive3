@@ -25,6 +25,10 @@
   margin: 1.25rem 0.875rem;
   z-index: 10;
 }
+.FluidImage{
+  min-height: 590px;
+  width: 100%;
+}
 
 
 
@@ -57,5 +61,10 @@
        margin: 1.25rem 0rem;
        z-index: 10;
      }
+     .FluidImage{
+      min-height: 320px;
+      max-height: 320px;
+      width: 100%;
+    }
      
     }     

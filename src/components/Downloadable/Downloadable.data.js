@@ -8,6 +8,15 @@ module.exports = () => {
     text2
     textColor
     texttitle
+
+    broschure {
+      sourceUrl
+      mediaItemUrl
+    }
+    grundrisse {
+      sourceUrl
+      mediaItemUrl
+    }
   }
   `
 }

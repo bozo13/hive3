@@ -8,8 +8,7 @@ import IconDown2 from '../../assets/images/IconDown2.png'
 import { flexbox } from '@material-ui/system';
 import Styles from './Downloadable.module.scss'
  
-
-const Downloadable = ({text1, text2, textColor, texttitle}) => {
+const Downloadable = ({text1, text2, textColor, texttitle, broschure, grundrisse}) => {
 
   return (
      <Grid container
@@ -26,12 +25,16 @@ const Downloadable = ({text1, text2, textColor, texttitle}) => {
       </Box>
 
       <Box className={Styles.img1}>
+      <a href={broschure.mediaItemUrl} download target= '_blank'>
         <img src={IconDown1}  />
+      </a>
       </Box>
    
    
       <Box className={Styles.img2}>
-       <img src={IconDown2} />
+       <a href={grundrisse.mediaItemUrl} download target= '_blank'>
+        <img src={IconDown2} />
+       </a>
       </Box>
       <Box className={Styles.text2}>
       <Typography  variant='h4' color= 'secondary'>{text2}</Typography>

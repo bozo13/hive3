@@ -61,6 +61,14 @@ export const query = graphql`
               text2
               textColor
               texttitle
+                    broschure {
+                      sourceUrl
+                      mediaItemUrl
+                    }
+                    grundrisse {
+                      sourceUrl
+                      mediaItemUrl
+                    }
             }
             ... on WpPage_Pagebuilder_Layouts_Network {
               fieldGroupName
