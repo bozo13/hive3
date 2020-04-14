@@ -132,7 +132,7 @@ const Kontakt = ({text1, text2, textColor, texttitle}) => {
     <TextField width={1}
       label="NAME"
       name="name"
-
+      required= 'true'
       className={styles.textField}
       /*
       value={values.name}
@@ -202,6 +202,7 @@ const Kontakt = ({text1, text2, textColor, texttitle}) => {
 
     <FormControlLabel
       style={styles.formControlLabel}
+      required= 'true'
       value="end"
       control={<Checkbox  />}
       label="Ich habe die Datenschutzbestimmungen gelesen und akzeptiert."

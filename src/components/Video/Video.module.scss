@@ -4,7 +4,7 @@
 
   .PlayButton{
     position: absolute!important;
-    top: calc( 50% - 20px )!important;
+    top: 50%!important;
     left: 50%!important;
     width:  90px !important;
     height:  104px !important;
@@ -19,7 +19,7 @@
     .PlayButton{
         width:  47px !important;
         height:  52px !important;
-        top: 52%!important;
+        top: 60%!important;
         left: 53%  !important;
         transform: translate(-50%,  -50%)!important;
    }

@@ -78,7 +78,7 @@ class Mapbox extends PureComponent {
     return (
       popupInfo && (
         <Popup
-          tipSize={5}
+          tipSize={6}
           anchor="top"
           longitude={popupInfo.longitude}
           latitude={popupInfo.latitude}

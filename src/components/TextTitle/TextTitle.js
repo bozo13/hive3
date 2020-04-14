@@ -9,9 +9,9 @@ const TextTitle = ({ text ,texttitle2}) => {
 
   return (
   <Box className={Styles.root}>
-   <Container >
+   <Container  id={'Film'} >
     <Grid container className={Styles.TitleWrap}>
-      <Box component={Grid} item xs={2} display={{ xs: "none", sm: "block" }} gir />
+      <Box component={Grid} item xs={2} display={{ xs: "none", sm: "block" }} />
 
     <Grid item xs={12} lg={8}>
        <Typography variant='h2' className={Styles.FirstTitle}>{text} </Typography>

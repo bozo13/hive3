@@ -78,12 +78,12 @@ tr{
 }
 .Pagination{
     position: absolute;
-    bottom: 15%;
     justify-content: center;
     display: flex;
     flex-direction: row;
     align-content: center;
     width: 100%;
+    margin-top: -4rem;
    
 }
 .Anbindungobjekt{
@@ -107,4 +107,12 @@ tr{
     background-position: center bottom;
     left: 0%;
     background-repeat: no-repeat;
+}
+@media only screen and (max-width: 600px) {
+    .Root{background: none;}
+    .Pagination{
+
+        margin-top: -6rem;
+       
+    }
 }
