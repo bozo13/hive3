@@ -139,10 +139,10 @@ const theme = createMuiTheme({
         
         "&:first-child": {
           color: "#DFA629",
-          fontSize: "1.43rem",
+          fontSize: "1.2rem",
           padding: '0px',
           fontFamily: 'Ostbahnhof', 
-          letterSpacing: '0.12rem',
+          letterSpacing: '0rem',
           lineHeight: '1.22rem',
           paddingRight: '5px'
          },
@@ -150,6 +150,7 @@ const theme = createMuiTheme({
          "&:last-child": {
           fontFamily: 'GraphitRegular', 
           color: "#232E3C",
+          fontSize: "1rem",
          
          },
        
