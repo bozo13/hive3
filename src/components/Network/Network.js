@@ -30,7 +30,7 @@ const Network = ({text1, text2, textColor, texttitle ,texttitle2}) => {
           <Typography variant = 'h2'  className={Styles.texttitle}> {texttitle}</Typography>
           <Typography variant = 'h2' color='secondary'  className={Styles.texttitle2}> {texttitle2}</Typography>
         </Grid>
-        <Grid item xs={12} sm={4}  style={{alignSelf:'center' }}>
+        <Grid item xs={12} sm={4}   className={Styles.textBlock}>
           <Typography  variant = 'body1'  > {text1}</Typography>
         </Grid>
         <Box

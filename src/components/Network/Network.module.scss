@@ -20,6 +20,10 @@
   height:  593px ;
   
 }
+.textBlock{
+  align-self:'center';
+  padding: 2rem;
+}
 .texttitle{
   margin-top: 8.3333%!important;  
   margin-left: -8.3333%!important ;
@@ -46,6 +50,9 @@
       .NetworkBg{
         order: 1; 
         height:  392px ;
+      }
+      .textBlock{
+        margin: 3rem 0;
       }
       .text2{
         order: 2;

@@ -143,7 +143,9 @@ export default function Header() {
                 className={clsx(classes.menuButton, open && classes.hide)}
               >
               <Menu/>
+           
             </IconButton>
+       
           </Box>
         <Grid item xs={4}  style={{ textAlign: "center" }}>
                   <Link to="/" >
@@ -186,6 +188,8 @@ export default function Header() {
       </IconButton>
     </div>
     <MainMenu />
+    <Link to="/impressum"  style={{ textAlign: "center", color:'#DFA629', paddingTop: '2rem' }}  >> Impressum </Link> 
+    <Link to="/datenschutz/"  style={{ textAlign: "center", color:'#DFA629' , paddingTop: '1rem' }} >> Datenschutzerklärung </Link> 
 </Drawer>
 </div>
   )
