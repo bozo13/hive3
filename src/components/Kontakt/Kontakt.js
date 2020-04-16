@@ -38,11 +38,11 @@ import Styles from './Kontakt.module.scss'
 const Kontakt = ({text1, text2, textColor, texttitle}) => {
 
   return (
-    <Box className={ Styles.container} id={'Kontakt'} >
-    <Container >
+    <Box className={ Styles.container} >
+    <Container  id={'Kontakt'}>
 
   
-    <Grid container>
+    <Grid container >
       <Grid item xs={12}   className={ Styles.texttitle} >
         <Typography  color='secondary' variant = 'h3' >{texttitle}</Typography>
       </Grid>

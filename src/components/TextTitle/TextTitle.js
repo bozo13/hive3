@@ -9,7 +9,7 @@ const TextTitle = ({ text ,texttitle2}) => {
 
   return (
   <Box className={Styles.root}>
-   <Container  id={'Film'} >
+   <Container>
     <Grid container className={Styles.TitleWrap}>
       <Box component={Grid} item xs={2} display={{ xs: "none", sm: "block" }} />
 

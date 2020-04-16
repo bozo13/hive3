@@ -7,7 +7,7 @@ const Keyfacts = ({ keyfacts, keyfacts2  }) => {
 return (
   <Container id={'Keyfacts'} >
   <Grid container>
-  <Grid item xs={12}    >
+  <Grid item xs={12}  style={{paddingTop:'3rem'}}  >
     <Typography  color='secondary' variant = 'h3' align='center'>Keyfacts</Typography>
   </Grid>
 </Grid>

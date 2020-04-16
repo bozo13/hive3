@@ -14,7 +14,7 @@ import FooterImage from '../../assets/images/FootImage.png'
 
 const styles = {
   root: {
-    margin:'0',
+    marginTop:'75px',
   },
   container: {
     width:'100%',
@@ -38,7 +38,7 @@ function BlogPost({ data }) {
   
 
   return (
-    <Layout>
+    <Layout >
     
       {!!pageBuilder&&
         pageBuilder.layouts&&

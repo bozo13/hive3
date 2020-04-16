@@ -83,6 +83,9 @@ const theme = createMuiTheme({
         tonalOffset: 0.2,
       },
     overrides: {
+      MuiContainerRoot:{
+        marginTop:'74px',
+      },
       MuiTypography: {
         body1: {
          fontSize:'0.87rem',
@@ -91,7 +94,8 @@ const theme = createMuiTheme({
          lineHeight: '1.55rem',
          color:'#232E3C',
         },
-        p:{
+        
+        body1:{
           
           fontSize:'0.87rem',
           fontFamily:'GraphitRegular',
