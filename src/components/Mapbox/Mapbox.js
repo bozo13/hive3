@@ -58,7 +58,8 @@ class Mapbox extends PureComponent {
         longitude:13.454428,
         zoom: 14,
         bearing: 0,
-        pitch: 0
+        pitch: 0,
+        scrollZoom: false,
       },
       popupInfo: null
     };
@@ -110,6 +111,8 @@ class Mapbox extends PureComponent {
         mapStyle="mapbox://styles/cadman-thv/ck5s3lae63cxg1ismjou9i51g"
         onViewportChange={this._updateViewport}
         mapboxApiAccessToken={TOKEN}
+        scrollZoom= {false}
+
       >
      
       <Pins data={dataed} onClick={this._onClickMarker} />
