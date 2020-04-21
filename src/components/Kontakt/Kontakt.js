@@ -1,137 +1,189 @@
-import React from "react";
-import {Link} from 'gatsby';
-import{ Typography ,
-  Grid,
-  Box ,
+import React, { useState } from 'react';
+import {Container, 
+  Grid,  
   TextField ,
-   IconButton ,
-   FilledInput,
-   OutlinedInput ,
-   Visibility ,
-   VisibilityOff,
-   Button,
-   Checkbox,
-   Container,
- }from '@material-ui/core/';
-import FooterBox from  '../FooterBox';
-import TownscapeLogo from '../../assets/svg/townscapeLogo.svg';
-import GatewayLogo from '../../assets/svg/gateway.svg';
-import FooterImage from '../../assets/images/FootImage.png'
-import Styles from './Kontakt.module.scss'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+  Button ,
+  Dialog ,
+  DialogActions ,
+  DialogContent ,
+  DialogContentText ,
+  DialogTitle ,withStyles, FormControl } from '@material-ui/core';
+import axios from 'axios';
+import classes from './Kontakt.module.scss'
+import {
+  Formik, Form, Field, ErrorMessage,
+} from 'formik';
+import * as Yup from 'yup';
+// import { DisplayFormikState } from './formikHelper';
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+const styles = {
+
+};
+
+const endpoints = {
+  contact: "/.netlify/functions/sendEmail",
 }
 
 
+function Kontakt(props) {
 
-class Kontakt extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "", email: "", message: "" };
+  const [open, setOpen] = useState(false);
+  const [isSubmitionCompleted, setSubmitionCompleted] = useState(false);
+  
+  function handleClose() {
+    setOpen(false);
   }
 
-  render() {
-    const text1 = this.props.text1
-    const text2 = this.props.text2
-    const texttitle = this.props.texttitle
-    
-    return (
-      <Box className={ Styles.container} >
-      <Container  id={'Kontakt'}>
-  
-    
-      <Grid container >
-        <Grid item xs={12}   className={ Styles.texttitle} >
-          <Typography  color='secondary' variant = 'h3' >{texttitle}</Typography>
-        </Grid>
+  function handleClickOpen() {
+    setSubmitionCompleted(false);
+    setOpen(true);
+  }
+
+  return (
+    <Container>
+    <Grid container>
+    <Grid item xs={12} sm={6} > </Grid> 
+    <Grid item xs ={12} sm={6} >
+      <Button variant="outlined" color="secondary" onClick={handleClickOpen}>
+        Contact us!
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        {!isSubmitionCompleted &&
+          <React.Fragment>
+            <DialogTitle id="form-dialog-title">Contact</DialogTitle>
+            <DialogContent >
+              <DialogContentText>
+                Send us a comment!
+              </DialogContentText>
+              
+              <Formik 
+                initialValues={{ email: '', name: '', comment: '' }}
+                onSubmit={(values, { setSubmitting }) => {
+                   setSubmitting(true);
+                  axios.post(endpoints.contact,
+                    values,
+                    {
+                      headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/x-www-form-urlencoded' 
+                      }
+                    },
+                  ).then((resp) => {
+                    setSubmitionCompleted(true);
+                  }
+                  );
+                }}
+
+                validationSchema={Yup.object().shape({
+                  email: Yup.string()
+                    .email()
+                    .required('Required'),
+                  name: Yup.string()
+                    .required('Required'),
+                  comment: Yup.string()
+                    .required('Required'),
+                })}
+              >
+                {(props) => {
+                  const {
+                    values,
+                    touched,
+                    errors,
+                    dirty,
+                    isSubmitting,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    handleReset,
+                  } = props;
+                  return (
+                  
+                    <form onSubmit={handleSubmit}   data-netlify={true}>
+                      <TextField
+                        label="name"
+                        name="name"
+                        className={classes.textField}
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        helperText={(errors.name && touched.name) && errors.name}
+                        margin="normal"
+                        width={1}
+                      />
+
+                      <TextField
+                        error={errors.email && touched.email}
+                        label="email"
+                        name="email"
+                        className={classes.textField}
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        helperText={(errors.email && touched.email) && errors.email}
+                        margin="normal"
+                        width={1}
+                      />
+
+                      <TextField
+                        label="comment"
+                        name="comment"
+                        className={classes.textField}
+                        value={values.comment}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        helperText={(errors.comment && touched.comment) && errors.comment}
+                        margin="normal"
+                        width={1}
+                      />
+                      <DialogActions>
+                        <Button
+                          type="button"
+                          className="outline"
+                          onClick={handleReset}
+                          disabled={!dirty || isSubmitting}
+                        >
+                          Reset
+                        </Button>
+                        <Button type="submit" disabled={isSubmitting}>
+                          Submit
+                        </Button>
+                        {/* <DisplayFormikState {...props} /> */}
+                      </DialogActions>
+                    </form>
+                  );
+                }}
+              </Formik>
+            </DialogContent>
+          </React.Fragment>
+        }
+        {isSubmitionCompleted &&
+          <React.Fragment>
+            <DialogTitle id="form-dialog-title">Thanks!</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Thanks
+              </DialogContentText>
+              <DialogActions>
+                <Button
+                  type="button"
+                  className="outline"
+                  onClick={handleClose}
+                >
+                  Back to app
+                  </Button>
+                {/* <DisplayFormikState {...props} /> */}
+              </DialogActions>
+            </DialogContent>
+          </React.Fragment>}
+      </Dialog>
       </Grid>
-  
-      <Grid container direction="row" justify="center" alignItems="flex-start" className ={Styles.root} >
-      <Grid item xs={12} sm={6}  className={Styles.text}>
-        <Box>
-          <img src={TownscapeLogo} className={Styles.img}/>
-          <img src={GatewayLogo} className={Styles.img2}/>
-        </Box>
-        <Box  className={Styles.space}/>
-        <div dangerouslySetInnerHTML={{__html: text2}}></div>
-        <Box className ={Styles.xs_none} >
-          <Link to='/impressum/ ' className={Styles.link}> >  Impressum</Link>
-          <Link to='/datenschutz/' className={Styles.link2}> > Datenschutzerklärung</Link>
-        </Box>
-        <Box
-        component={Grid} item xs={12} display={{ xs: "block", sm: "none" }}
-        className={Styles.space3}
-        />
       </Grid>
-  
-      <Grid item xs={12} sm={6} className={Styles.padding} >
-    <Formik
-      initialValues={{
-        name: '',
-        email: '',
-        message: '',
-      }}
-      onSubmit={
-        (values, actions) => {
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact-demo", ...values })
-          })
-          .then(() => {
-            alert('Success');
-            actions.resetForm()
-          })
-          .catch(() => {
-            alert('Error');
-          })
-          .finally(() => actions.setSubmitting(false))
-        }
-      }
-      validate={values => {
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-        const errors = {};
-        if(!values.name) {
-          errors.name = 'Name Required'
-        }
-        if(!values.email || !emailRegex.test(values.email)) {
-          errors.email = 'Valid Email Required'
-        }
-        if(!values.message) {
-          errors.message = 'Message Required'
-        }
-        return errors;
-      }}
-    >
-    {() => (
-      <Form name="contact-demo"  data-netlify={true}>
-        <label htmlFor="name">Name: </label>
-        <Field name="name"  placeholder="Name"/>
-        <ErrorMessage name="name" />
-  
-        <label htmlFor="email">Email: </label>
-        <Field name="email" />
-        <ErrorMessage name="email" />
-  
-        <label htmlFor="message">Message: </label>
-        <Field name="message" component="textarea"/>
-        <ErrorMessage name="message" />
-  
-        <Button variant="outlined" type="submit" color='secondary' type="submit">Send</Button>
-      </Form>
-    )}
-    </Formik>
-    </Grid>
-    </Grid>
     </Container>
-    </Box>
-
-
   );
 }
-}
-export default Kontakt
+
+export default withStyles(styles)(Kontakt);

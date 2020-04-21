@@ -50,7 +50,8 @@
     "react-map-gl": "^5.2.3",
     "react-paginate": "^6.3.2",
     "react-swipeable-views": "^0.13.9",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.0",
+    "yup": "^0.28.4"
   },
   "devDependencies": {
     "prettier": "^1.13.7"

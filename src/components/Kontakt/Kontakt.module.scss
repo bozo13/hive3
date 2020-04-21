@@ -16,9 +16,6 @@
 .form{
     max-width:  100% ;
   }
-.textField {
-    width:  100% ;
-  }
 .formControlLabel{
     margin-top: 1rem ;
     color:  #DFA629 ;
@@ -72,9 +69,21 @@
     padding-top: 10px;
     display: block;
 }
+.FormControl{
+  min-width: 100%;
+}
 
 .xs_true{
     display: none;        
+}
+form{
+  width: 100%;
+  display: block;
+}
+.textField{
+  width: 100%;
+  display: block;
+  min-width: 24rem;
 }
   @media only screen and (max-width: 600px) {
 
