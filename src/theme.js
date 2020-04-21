@@ -148,7 +148,7 @@ const theme = createMuiTheme({
           fontFamily: 'Ostbahnhof', 
           letterSpacing: '0rem',
           lineHeight: '1.22rem',
-          padding: '0px 5px 15px 0px'
+          padding: '0px 5px 15px 0px',
          },
    
          "&:last-child": {
