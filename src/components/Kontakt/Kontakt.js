@@ -9,7 +9,7 @@ import {Container,
   DialogContentText ,
   DialogTitle ,withStyles, FormControl } from '@material-ui/core';
 import axios from 'axios';
-import classes from './Kontakt.module.scss'
+import Styles from './Kontakt.module.scss'
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
@@ -26,7 +26,7 @@ const endpoints = {
 
 
 function Kontakt(props) {
-
+  const { classes } = props;
   const [open, setOpen] = useState(false);
   const [isSubmitionCompleted, setSubmitionCompleted] = useState(false);
   
@@ -69,7 +69,7 @@ function Kontakt(props) {
                     {
                       headers: {
                         'Access-Control-Allow-Origin': '*',
-                        'Content-Type': 'application/x-www-form-urlencoded' 
+                        'Content-Type': 'application/json',
                       }
                     },
                   ).then((resp) => {
@@ -102,11 +102,11 @@ function Kontakt(props) {
                   } = props;
                   return (
                   
-                    <form onSubmit={handleSubmit}   data-netlify={true}>
+                    <form onSubmit={handleSubmit}  name='contact' method='post' data-netlify='true' data-netlify-honeybot='bot-field'  >
                       <TextField
                         label="name"
                         name="name"
-                        className={classes.textField}
+                        className={Styles.textField}
                         value={values.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -119,7 +119,7 @@ function Kontakt(props) {
                         error={errors.email && touched.email}
                         label="email"
                         name="email"
-                        className={classes.textField}
+                        className={Styles.textField}
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -131,7 +131,7 @@ function Kontakt(props) {
                       <TextField
                         label="comment"
                         name="comment"
-                        className={classes.textField}
+                        className={Styles.textField}
                         value={values.comment}
                         onChange={handleChange}
                         onBlur={handleBlur}
