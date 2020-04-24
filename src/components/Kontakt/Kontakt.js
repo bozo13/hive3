@@ -48,37 +48,32 @@ class Kontakt extends Component {
             name: '',
             email: '',
             phone: '',
-            message: ''
+            message: '',
         };
     }
     // Handles submission for Netlify form
     handleSubmit = e => {
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({ 'form-name': 'contact', ...this.state })
-           
-        })
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      })
         .then(() => alert("Success!"))
         .catch(error => alert(error));
-
-        e.preventDefault();
+  
+      e.preventDefault();
     };
 
     // Handles state for input fields
-    handleChange = name => event => {
-        this.setState({
-            [name]: event.target.value
-        });
-    };
+    handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
     render() {
-        const { classes } = this.props;
-        const { name, email,tel,  message } = this.state;
+     
         const text1 = this.props.text1
         const text2 = this.props.text2
         const textColor = this.props.textColor
         const texttitle = this.props.texttitle
+        const { name, email,tel, message } = this.state;
         return (
           <Box className={ Styles.container} >
           <Container  id={'Kontakt'}>
@@ -140,7 +135,7 @@ class Kontakt extends Component {
                             required
                             type='email'
                             name='email'
-                            value={email}
+                            value={ email}
                             margin='normal'
                             variant='standard'
                             label='Email'
@@ -200,8 +195,5 @@ class Kontakt extends Component {
     }
 }
 
-Kontakt.propTypes = {
-    classes: PropTypes.object.isRequired
-};
 
 export default Kontakt;
