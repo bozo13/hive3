@@ -48,7 +48,6 @@ class Kontakt extends Component {
             name: '',
             email: '',
             phone: '',
-            textmask: '',
             message: ''
         };
     }
@@ -115,7 +114,7 @@ class Kontakt extends Component {
             />
           </Grid>
           <Grid item xs={12} sm={6} className={Styles.padding} >
-                <Box  className={Styles.paper}>
+              
                     <form
                         onSubmit={this.handleSubmit}
                         name="contact" 
@@ -130,7 +129,7 @@ class Kontakt extends Component {
                             required
                             type='text'
                             name='name'
-                            value={this.name}
+                            value={name}
                             margin='normal'
                             variant='standard'
                             label='Full Name'
@@ -141,7 +140,7 @@ class Kontakt extends Component {
                             required
                             type='email'
                             name='email'
-                            value={this.email}
+                            value={email}
                             margin='normal'
                             variant='standard'
                             label='Email'
@@ -151,7 +150,7 @@ class Kontakt extends Component {
                             className={Styles.textField}
                             name='phone'
                             type='tel'
-                            value={this.tel}
+                            value={tel}
                             variant='standard'
                             label='Phone Number'
                             margin='normal'
@@ -162,7 +161,7 @@ class Kontakt extends Component {
                             required
                             name='message'
                             type='text'
-                            value={this.message}
+                            value={message}
                             margin='normal'
                             multiline
                             rows='5'
@@ -179,7 +178,7 @@ class Kontakt extends Component {
                             Submit
                         </Button>
                     </form>
-                </Box>
+          
                 </Grid>
      
                 <Box
