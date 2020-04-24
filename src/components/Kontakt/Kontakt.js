@@ -21,52 +21,16 @@ import{ Typography ,
    Paper
  }from '@material-ui/core/';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+
 
 import Styles from './Kontakt.module.scss'
 import TownscapeLogo from '../../assets/svg/townscapeLogo.svg';
 import GatewayLogo from '../../assets/svg/gateway.svg';
 
 
-// Styles for each component
-const styles = {
-    container: {
-        margin: '1rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center'
-    },
-    paper: {
-        width: '500px'
-    },
-    root: {
-        margin: '1rem',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    button: {
 
-    },
-    textfield: {
-        minWidth: '90%'
-    }
-};
 
-// Text Mask for phone field to only allow 10 numbers
 
-// Styles the text fields
-const StyledTextField = withStyles({
-    root: {
-        '& label.Mui-focused': {
-            color: 'green'
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: 'green'
-        }
-    }
-})(TextField);
 
 // Adds attributes to form input fields for Netlify
 const encode = data => {
@@ -151,18 +115,18 @@ class Kontakt extends Component {
             />
           </Grid>
           <Grid item xs={12} sm={6} className={Styles.padding} >
-                <Box  className={classes.paper}>
+                <Box  className={Styles.paper}>
                     <form
-                        className={classes.root}
                         onSubmit={this.handleSubmit}
-                        data-netlify='true'
-                        netlify='true'
+                        name="contact" 
+                        netlify='true' 
+                        netlify-honeypot="bot-field" 
                     >
                         <input type='hidden' name='form-name' value='contact' />
                   
 
-                        <StyledTextField
-                            style={styles.textfield}
+                        <TextField
+                            className={Styles.textField}
                             required
                             type='text'
                             name='name'
@@ -172,8 +136,8 @@ class Kontakt extends Component {
                             label='Full Name'
                             onChange={this.handleChange}
                         />
-                        <StyledTextField
-                            style={styles.textfield}
+                        <TextField
+                            className={Styles.textField}
                             required
                             type='email'
                             name='email'
@@ -183,9 +147,8 @@ class Kontakt extends Component {
                             label='Email'
                             onChange={this.handleChange}
                         />
-                        <StyledTextField
-                            style={styles.textfield}
-                            required
+                        <TextField
+                            className={Styles.textField}
                             name='phone'
                             type='tel'
                             value={this.tel}
@@ -194,8 +157,8 @@ class Kontakt extends Component {
                             margin='normal'
                             onChange={this.handleChange}
                         />
-                        <StyledTextField
-                            style={styles.textfield}
+                        <TextField
+                            className={Styles.textField}
                             required
                             name='message'
                             type='text'
@@ -211,7 +174,7 @@ class Kontakt extends Component {
                         <Button
                             size='medium'
                             type='submit'
-                            className={classes.button}
+                          
                         >
                             Submit
                         </Button>
@@ -242,4 +205,4 @@ Kontakt.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Kontakt);
+export default Kontakt;
