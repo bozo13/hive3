@@ -29,6 +29,10 @@ class CarouselBg extends React.Component {
   
      
         <Box
+        data-sal="slide-left"
+        data-sal-delay="800"
+        data-sal-duration='1000'
+        data-sal-easing="ease"
         component={Grid}
         style={styles.bgCarousel}
         item

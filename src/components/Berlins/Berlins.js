@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import BerlinBg from '../../assets/images/BerlinBg.png'
 import { Container } from '@material-ui/core';
 import Styles from './Berlin.module.scss'
-import {Reveal,Fade} from 'react-reveal';
+
 
 const styles = {
   root: {
@@ -48,21 +48,32 @@ const Berlins = ({text1, text2, textColor, texttitle,  texttiltle2}) => {
 
       <Grid item xs={12} sm={9} >
       
-        <Typography variant="h2" className={Styles.texttitle}> <Fade bottom>{texttitle}</Fade></Typography>
-        <Typography variant="h2" className = {Styles.texttiltle2}><Fade bottom delay={200}>{texttiltle2}</Fade></Typography>
+        <Typography variant="h2" className={Styles.texttitle}           
+        data-sal="slide-up"
+        data-sal-delay="0"
+        data-sal-duration='500'
+        data-sal-easing="ease"> {texttitle}</Typography>
+        <Typography variant="h2" className = {Styles.texttiltle2}
+        data-sal="slide-up"
+        data-sal-delay="200"
+        data-sal-duration='500'
+        data-sal-easing="ease"> {texttiltle2}</Typography>
       </Grid>
-  
+ 
       <Box
       component={Grid}
       item
       xs={3}
       display={{ xs: "none", lg: "block" }}
       />
-    
-    <Grid item xs={12} sm={4} style={styles.block}>
-      <Fade bottom delay={400}>
-          <Typography variant="body1"> {text1}</Typography>
-      </Fade>
+     
+    <Grid item xs={12} sm={4} style={styles.block} >
+          <Typography variant="body1"
+          data-sal="slide-up"
+    data-sal-delay="400"
+    data-sal-duration='500'
+    data-sal-easing="ease"
+    > {text1}</Typography>
     </Grid>
     <Box
     component={Grid}
@@ -71,9 +82,13 @@ const Berlins = ({text1, text2, textColor, texttitle,  texttiltle2}) => {
     display={{ xs: "none", lg: "block" }}
     />
     <Grid item xs={12} sm={5}  style={styles.block}>
-     <Fade bottom>
-     <Typography variant="body1"> {text2}</Typography>
-      </Fade>
+ 
+     <Typography variant="body1"
+     data-sal="slide-up"
+     data-sal-delay="600"
+     data-sal-duration='500'
+     data-sal-easing="ease"> {text2}</Typography>
+      
     </Grid>
     <Grid item xs={12}   style={styles.block}></Grid>
     <Grid item xs={12}   style={styles.block}></Grid>

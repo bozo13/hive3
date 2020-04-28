@@ -4,7 +4,7 @@ import BerlinBgCounter from '../../assets/images/BerlinBgCounter.png'
 import TransHexagonBg2 from '../../assets/images/TransHexagonBg2.png'
 import TransHexagonBg3 from '../../assets/images/TransHexagonBg3.png'
 import Styles from './Einobjekt.module.scss'
-import {Reveal,Fade} from 'react-reveal';
+
 
 
 const styles = {
@@ -66,7 +66,11 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
       display={{ xs: "none", lg: "block" }}
       />
        
-        <Box style={styles.root} />
+        <Box style={styles.root}         
+        data-sal="slide-down"
+        data-sal-delay="500"
+        data-sal-duration='1200'
+        data-sal-easing="ease" />
       
      
         <Box
@@ -74,17 +78,20 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
         item
         xs={6}
         display={{ xs: "none", lg: "block" }}
-        style={styles.bgHex1}
-        /> 
+        style={styles.bgHex1}  /> 
       
   
       <Grid item xs={12} sm={6} style={styles.texttitle}>
-        <Fade bottom duration={100}>
-          <Typography variant= 'h3'  className={Styles.texttitle1}> {texttitle}</Typography>
-        </Fade>
-        <Fade bottom duration={1000} delay={500}>
-          <Typography variant= 'h3'  className={Styles.texttitle2}> {texttitle2}</Typography>
-        </Fade>
+          <Typography variant= 'h3'  className={Styles.texttitle1} 
+          data-sal="slide-right"
+          data-sal-delay="0"
+          data-sal-duration='500'
+          data-sal-easing="ease"> {texttitle}</Typography>
+          <Typography variant= 'h3'  className={Styles.texttitle2}
+          data-sal="slide-right"
+          data-sal-delay="200"
+          data-sal-duration='800'
+          data-sal-easing="ease"> {texttitle2}</Typography>
       </Grid>
   
       <Box
@@ -94,9 +101,11 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
       display={{ xs: "none", lg: "block" }}
       />
     <Grid item xs={12} sm={4} style={Styles.block}>
-    <Fade bottom duration={1000} delay={800}>
-    <Typography variant='body1' > {text1}</Typography>       
-    </Fade>
+ 
+    <Typography variant='body1' data-sal="slide-up"
+    data-sal-delay="200"
+    data-sal-duration='500'
+    data-sal-easing="ease"> {text1}</Typography>       
     </Grid>
     <Box
     component={Grid}
@@ -112,9 +121,12 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
     display={{ xs: "none", lg: "block" }}
     />
   <Grid item xs={12} sm={4} style={styles.block}>
-  <Fade bottom duration={600} delay={1200}>
-      <Typography variant='body1' > {text2}</Typography>       
-    </Fade>
+      <Typography variant='body1' 
+      data-sal="slide-right"
+      data-sal-delay="300"
+      data-sal-duration='500'
+      data-sal-easing="ease"> {text2}</Typography>       
+    
   </Grid>
      
       <Box
@@ -123,8 +135,11 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
       xs={5}
       display={{ xs: "none", lg: "block" }}
       style={styles.bgHex2}
-      >
-      </Box>
+      data-sal="slide-down"
+      data-sal-delay="600"
+      data-sal-duration='800'
+      data-sal-easing="ease"
+      />
      
     </Grid>
  

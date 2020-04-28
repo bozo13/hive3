@@ -14,7 +14,6 @@ import Styles from "./Carousel.module.scss"
 
 import { ZoomIn, ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
 import { MobileStepper, Paper, Typography, Grid, Box, Button, Container, useTheme ,useMediaQuery } from '@material-ui/core';
-import {Reveal,Fade} from 'react-reveal';
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -261,28 +260,48 @@ class Carousel extends React.Component {
       </Box>
         <Grid item xs={12} md={4} className={Styles.freiraum}>
           <Box className={Styles.Texttitle}>
-            <Typography  variant="h3" className={Styles.texttilte1} ><Fade bottom > { Texttitle } </Fade></Typography>
-            <Typography  variant="h3" className={Styles.texttilte2} ><Fade bottom delay={200}> { Texttitle2 } </Fade></Typography>
+            <Typography  variant="h3" className={Styles.texttilte1} 
+            data-sal="slide-up"
+            data-sal-delay="0"
+            data-sal-duration='500'
+            data-sal-easing="ease"> { Texttitle } </Typography>
+            <Typography  variant="h3" className={Styles.texttilte2} 
+            data-sal="slide-up"
+            data-sal-delay="200"
+            data-sal-duration='500'
+            data-sal-easing="ease"> { Texttitle2 } </Typography>
           </Box>
           <Box className={Styles.block1}>
-            <Typography  variant='body1' > 
-              <Fade bottom delay={400}>
+            <Typography  variant='body1'
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-duration='500'
+            data-sal-easing="ease"> 
+              
                 {Textfiled1} 
-                </Fade>
+                
             </Typography>
           </Box>
           <Box className={Styles.block2}>
-            <Typography  variant="body1" > 
-              <Fade bottom delay={600}>
+            <Typography  variant="body1" 
+            data-sal="slide-up"
+            data-sal-delay="400"
+            data-sal-duration='500'
+            data-sal-easing="ease"> 
+              
                 {Textfiled2} 
-              </Fade>
+              
             </Typography>
           </Box>
           <Box className={Styles.block3}>
-          <Typography  variant="body1" > 
-            <Fade bottom delay={800}>
+          <Typography  variant="body1" 
+          data-sal="slide-up"
+          data-sal-delay="500"
+          data-sal-duration='500'
+          data-sal-easing="ease"> 
+            
               {Textfiled3} 
-            </Fade>
+            
           </Typography>
         </Box>
 

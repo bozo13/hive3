@@ -53,7 +53,11 @@ class Anbindung extends React.Component {
   <Box component={Grid} className={Styles.bgCarousel} item  xs={2} display={{ xs: "none", sm: "block" }} />
   <Grid item xs={12} sm={4} alignself='center' justifyself = 'center' style={{position:'relative',}}>
 
-  <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} >
+  <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} 
+  data-sal="slide-up"
+  data-sal-delay="200"
+  data-sal-duration='500'
+  data-sal-easing="ease">
       <Box style={Object.assign({}, styles1.slide, styles1.slide1)} >
         <div className={Styles.AnbindungBg}>
         <h4 className={Styles.topTtile1}>{title1}</h4> 
@@ -90,7 +94,11 @@ class Anbindung extends React.Component {
         </SwipeableViews>
         <Paginations dots={2} index={index} onChangeIndex={this.handleChangeIndex}  />
         </Grid>     
-        <Box component={Grid} className={Styles.Anbindungobjekt} item  xs={6} display={{ xs: "none", sm: "block" }} />
+        <Box component={Grid} className={Styles.Anbindungobjekt} item  xs={6} display={{ xs: "none", sm: "block" }} 
+        data-sal="slide-up"
+        data-sal-delay="400"
+        data-sal-duration='500'
+        data-sal-easing="ease"/>
         </Grid>
         </Container>
         </Box>  

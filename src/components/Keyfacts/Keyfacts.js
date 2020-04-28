@@ -1,6 +1,6 @@
 import React from "react"
 import { Container,makeStyles,Table,TableRow, TableHead, TableCell, Grid, TableFooter, TableContainer,TableBody,Typography } from '@material-ui/core'
-import {Reveal,Fade} from 'react-reveal';
+
 
 const Keyfacts = ({ keyfacts, keyfacts2  }) => {
 
@@ -18,9 +18,15 @@ return (
               <TableBody>
                 {keyfacts.map((keyfact, i) => (
                   
-                    <TableRow  key={i}>
-                      <TableCell><Fade bottom><h4>{keyfact.title}</h4></Fade> </TableCell>
-                      <TableCell><Fade bottom delay={300}><p>{keyfact.description}</p></Fade></TableCell>
+                    <TableRow  key={i} >
+                      <TableCell><h4   data-sal="slide-up"
+                      data-sal-delay="0"
+                      data-sal-duration='500'
+                      data-sal-easing="ease">{keyfact.title}</h4> </TableCell>
+                      <TableCell><p   data-sal="slide-up"
+                      data-sal-delay="200"
+                      data-sal-duration='500'
+                      data-sal-easing="ease">{keyfact.description}</p></TableCell>
                     </TableRow>
                  
                 ))}
@@ -33,8 +39,16 @@ return (
               <TableBody>
                 {keyfacts2.map((keyfact2, i) => (
                     <TableRow  key={i}>
-                      <TableCell><Fade bottom delay={500}><h4>{keyfact2.title}</h4></Fade></TableCell>
-                      <TableCell><Fade bottom delay={800}><p>{keyfact2.description}</p></Fade></TableCell>
+                      <TableCell><h4
+                      data-sal="slide-up"
+                      data-sal-delay="0"
+                      data-sal-duration='500'
+                      data-sal-easing="ease">{keyfact2.title}</h4></TableCell>
+                      <TableCell><p
+                      data-sal="slide-up"
+                      data-sal-delay="200"
+                      data-sal-duration='500'
+                      data-sal-easing="ease">{keyfact2.description}</p></TableCell>
                     </TableRow>
                 ))}
               </TableBody>

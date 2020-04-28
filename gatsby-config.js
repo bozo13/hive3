@@ -62,6 +62,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-chakra-ui`,
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-react-svg",

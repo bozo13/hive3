@@ -52,7 +52,8 @@ class MainMenu extends React.PureComponent {
                           style={{
                           listStyleType: `none`,
                           padding: `1rem`,
-                        }} />
+                        }} 
+                    />
                     ))}
                     </List>      
              

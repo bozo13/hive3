@@ -2,7 +2,7 @@ import React from "react"
 import { Typography, Theme, Grid,Box, Container } from "@material-ui/core"
 import Styles from './TextTitle.module.scss'
 import AnbindungBg from '../../assets/svg/anbindung.svg'
-import Fade from 'react-reveal/Fade';
+
 
 const TextTitle = ({ text ,texttitle2}) => {
 
@@ -14,8 +14,16 @@ const TextTitle = ({ text ,texttitle2}) => {
 
     <Grid item xs={12} lg={8}>
       
-        <Typography variant='h2' className={Styles.FirstTitle}> <Fade bottom duration={1000}>{text}</Fade> </Typography>
-        <Typography variant='h2' className={Styles.SecondTitle}> <Fade bottom duration={1000} delay={300}>{texttitle2}</Fade> </Typography>
+        <Typography variant='h2' className={Styles.FirstTitle}
+               data-sal="slide-up"
+                data-sal-delay="200"
+                data-sal-duration='600'
+                data-sal-easing="ease"> {text} </Typography>
+        <Typography variant='h2' className={Styles.SecondTitle}
+                data-sal="slide-up"
+                data-sal-delay="0"
+                data-sal-duration='500'
+                data-sal-easing="ease">{texttitle2} </Typography>
       
     </Grid>
 

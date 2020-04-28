@@ -11,7 +11,8 @@ const MenuItem = ({ menuItem, i }) => {
   return (
     <Button color='inherit' key={i + menuItem.url}   
       onClick={() => scrollTo(menuItem.url)}
-      className={Styles.Button} >
+      className={Styles.Button} 
+    >
        
             {menuItem.label}
        
