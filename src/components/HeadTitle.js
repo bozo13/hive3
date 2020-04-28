@@ -4,6 +4,7 @@ import { Box, Grid,Container }  from '@material-ui/core';
 import Biglogo from '../assets/svg/hiveBigLogo.svg'
 import FluidImage from "./FluidImage"
 import Styles from './HeaderTitle.module.scss'
+import Fade from 'react-reveal/Fade';
 
 
 const styles = {
@@ -39,9 +40,9 @@ class  HeadTtile extends React.Component {
             alignItems="center"
             className = {Styles.Container}
             >
-            <Grid item xs={5} sm={2} className ={Styles.logoContainer}>
+            <Fade bottom className={Styles.logoContainer}>
                 <img src={Biglogo} className ={Styles.Biglogo}/>
-            </Grid>
+            </Fade>
             </Grid>
             </Container>
             </Box>
@@ -52,3 +53,8 @@ class  HeadTtile extends React.Component {
 } 
 
 export default HeadTtile;
+
+/*
+<Grid item xs={5} sm={2} className ={Styles.logoContainer}>
+</Grid>
+*/

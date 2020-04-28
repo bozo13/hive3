@@ -14,7 +14,7 @@ import Styles from "./Carousel.module.scss"
 
 import { ZoomIn, ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
 import { MobileStepper, Paper, Typography, Grid, Box, Button, Container, useTheme ,useMediaQuery } from '@material-ui/core';
-
+import {Reveal,Fade} from 'react-reveal';
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -241,7 +241,6 @@ class Carousel extends React.Component {
           }
           backButton={
             <Button
-     
               onClick={this.handleBack}
               disabled={activeStep === 0}
             >
@@ -262,22 +261,28 @@ class Carousel extends React.Component {
       </Box>
         <Grid item xs={12} md={4} className={Styles.freiraum}>
           <Box className={Styles.Texttitle}>
-            <Typography  variant="h3" className={Styles.texttilte1} >{ Texttitle } </Typography>
-            <Typography  variant="h3" className={Styles.texttilte2} >{ Texttitle2 } </Typography>
+            <Typography  variant="h3" className={Styles.texttilte1} ><Fade bottom > { Texttitle } </Fade></Typography>
+            <Typography  variant="h3" className={Styles.texttilte2} ><Fade bottom delay={200}> { Texttitle2 } </Fade></Typography>
           </Box>
           <Box className={Styles.block1}>
             <Typography  variant='body1' > 
+              <Fade bottom delay={400}>
                 {Textfiled1} 
+                </Fade>
             </Typography>
           </Box>
           <Box className={Styles.block2}>
             <Typography  variant="body1" > 
+              <Fade bottom delay={600}>
                 {Textfiled2} 
+              </Fade>
             </Typography>
           </Box>
           <Box className={Styles.block3}>
           <Typography  variant="body1" > 
+            <Fade bottom delay={800}>
               {Textfiled3} 
+            </Fade>
           </Typography>
         </Box>
 

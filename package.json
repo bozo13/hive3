@@ -49,6 +49,7 @@
     "react-image-lightbox": "^5.1.1",
     "react-map-gl": "^5.2.3",
     "react-paginate": "^6.3.2",
+    "react-reveal": "^1.2.2",
     "react-swipeable-views": "^0.13.9",
     "styled-components": "^5.0.0",
     "yup": "^0.28.4"

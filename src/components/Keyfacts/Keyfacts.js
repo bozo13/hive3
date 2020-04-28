@@ -1,6 +1,6 @@
 import React from "react"
 import { Container,makeStyles,Table,TableRow, TableHead, TableCell, Grid, TableFooter, TableContainer,TableBody,Typography } from '@material-ui/core'
-
+import {Reveal,Fade} from 'react-reveal';
 
 const Keyfacts = ({ keyfacts, keyfacts2  }) => {
 
@@ -17,10 +17,12 @@ return (
             <TableHead />
               <TableBody>
                 {keyfacts.map((keyfact, i) => (
+                  
                     <TableRow  key={i}>
-                      <TableCell><h4>{keyfact.title}</h4></TableCell>
-                      <TableCell><p>{keyfact.description}</p></TableCell>
+                      <TableCell><Fade bottom><h4>{keyfact.title}</h4></Fade> </TableCell>
+                      <TableCell><Fade bottom delay={300}><p>{keyfact.description}</p></Fade></TableCell>
                     </TableRow>
+                 
                 ))}
               </TableBody>
           </Table>
@@ -31,8 +33,8 @@ return (
               <TableBody>
                 {keyfacts2.map((keyfact2, i) => (
                     <TableRow  key={i}>
-                      <TableCell><h4>{keyfact2.title}</h4></TableCell>
-                      <TableCell><p>{keyfact2.description}</p></TableCell>
+                      <TableCell><Fade bottom delay={500}><h4>{keyfact2.title}</h4></Fade></TableCell>
+                      <TableCell><Fade bottom delay={800}><p>{keyfact2.description}</p></Fade></TableCell>
                     </TableRow>
                 ))}
               </TableBody>

@@ -4,7 +4,7 @@ import BerlinBgCounter from '../../assets/images/BerlinBgCounter.png'
 import TransHexagonBg2 from '../../assets/images/TransHexagonBg2.png'
 import TransHexagonBg3 from '../../assets/images/TransHexagonBg3.png'
 import Styles from './Einobjekt.module.scss'
-
+import {Reveal,Fade} from 'react-reveal';
 
 
 const styles = {
@@ -57,26 +57,34 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
 
   return (
     <Container>
+    
     <Grid container id={'Objekt'}>
-    <Box
-    component={Grid}
-    item
-    xs={12}
-    display={{ xs: "none", lg: "block" }}
-    />
-    <Box style={styles.root} />
       <Box
       component={Grid}
       item
-      xs={6}
+      xs={12}
       display={{ xs: "none", lg: "block" }}
-      style={styles.bgHex1}
-      >
-      </Box>
-
+      />
+       
+        <Box style={styles.root} />
+      
+     
+        <Box
+        component={Grid}
+        item
+        xs={6}
+        display={{ xs: "none", lg: "block" }}
+        style={styles.bgHex1}
+        /> 
+      
+  
       <Grid item xs={12} sm={6} style={styles.texttitle}>
-      <Typography variant= 'h3'  className={Styles.texttitle1}> {texttitle}</Typography>
-      <Typography variant= 'h3'  className={Styles.texttitle2}> {texttitle2}</Typography>
+        <Fade bottom duration={100}>
+          <Typography variant= 'h3'  className={Styles.texttitle1}> {texttitle}</Typography>
+        </Fade>
+        <Fade bottom duration={1000} delay={500}>
+          <Typography variant= 'h3'  className={Styles.texttitle2}> {texttitle2}</Typography>
+        </Fade>
       </Grid>
   
       <Box
@@ -86,7 +94,9 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
       display={{ xs: "none", lg: "block" }}
       />
     <Grid item xs={12} sm={4} style={Styles.block}>
-      <Typography variant='body1' > {text1}</Typography>       
+    <Fade bottom duration={1000} delay={800}>
+    <Typography variant='body1' > {text1}</Typography>       
+    </Fade>
     </Grid>
     <Box
     component={Grid}
@@ -102,18 +112,24 @@ const Einobjekt = ({text1, text2, textColor, texttitle, texttitle2}) => {
     display={{ xs: "none", lg: "block" }}
     />
   <Grid item xs={12} sm={4} style={styles.block}>
+  <Fade bottom duration={600} delay={1200}>
       <Typography variant='body1' > {text2}</Typography>       
+    </Fade>
   </Grid>
-  <Box
-  component={Grid}
-  item
-  xs={5}
-  display={{ xs: "none", lg: "block" }}
-  style={styles.bgHex2}
-  >
-  </Box>
+     
+      <Box
+      component={Grid}
+      item
+      xs={5}
+      display={{ xs: "none", lg: "block" }}
+      style={styles.bgHex2}
+      >
+      </Box>
+     
     </Grid>
+ 
     </Container>
+  
   )
 }
 
