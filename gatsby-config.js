@@ -22,7 +22,7 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          `http://www.hive-berlin.de/graphql`,
+          `https://www.hive-berlin.de/graphql`,
         verbose: true,
         // for wp-graphql-gutenberg, attributes currently breaks due
         // to the origin schema. It works if we exclude attributes
