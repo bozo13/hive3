@@ -44,7 +44,7 @@
     "gatsby-transformer-sharp": "2.4.3",
     "lightbox-react": "^0.3.7",
     "node-sass": "^4.13.1",
-    "parse-path": "^4.0.1",
+    "parse-path": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-image-lightbox": "^5.1.1",
